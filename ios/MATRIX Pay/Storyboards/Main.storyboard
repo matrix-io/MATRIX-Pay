@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,15 +20,18 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q2R-kq-ClE">
-                                <rect key="frame" x="71.5" y="258.5" width="232.5" height="150"/>
+                                <rect key="frame" x="52" y="165" width="216" height="150"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2le-Gy-7r9">
-                                        <rect key="frame" x="40" y="32.5" width="152.5" height="35"/>
+                                        <rect key="frame" x="40" y="25" width="136" height="40"/>
                                         <color key="backgroundColor" red="0.40000000000000002" green="0.74117647058823533" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="HIY-Oa-iGe"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="Make Payment">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -45,7 +49,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCG-FV-2Oe">
-                                        <rect key="frame" x="40" y="82.5" width="152.5" height="35"/>
+                                        <rect key="frame" x="40" y="85" width="136" height="40"/>
                                         <color key="backgroundColor" red="0.40000000000000002" green="0.74117647058823533" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="Register">
@@ -69,9 +73,9 @@
                                     <constraint firstAttribute="trailing" secondItem="2le-Gy-7r9" secondAttribute="trailing" constant="40" id="CwX-rK-wza"/>
                                     <constraint firstItem="HCG-FV-2Oe" firstAttribute="width" secondItem="2le-Gy-7r9" secondAttribute="width" id="NZl-Sb-hei"/>
                                     <constraint firstItem="2le-Gy-7r9" firstAttribute="leading" secondItem="q2R-kq-ClE" secondAttribute="leading" constant="40" id="Teu-RH-zAl"/>
-                                    <constraint firstItem="2le-Gy-7r9" firstAttribute="centerY" secondItem="q2R-kq-ClE" secondAttribute="centerY" constant="-25" id="gbO-jf-BUK"/>
+                                    <constraint firstItem="2le-Gy-7r9" firstAttribute="centerY" secondItem="q2R-kq-ClE" secondAttribute="centerY" constant="-30" id="gbO-jf-BUK"/>
                                     <constraint firstAttribute="height" constant="150" id="mNZ-r8-zma"/>
-                                    <constraint firstItem="HCG-FV-2Oe" firstAttribute="centerY" secondItem="q2R-kq-ClE" secondAttribute="centerY" constant="25" id="pav-aA-RFy"/>
+                                    <constraint firstItem="HCG-FV-2Oe" firstAttribute="centerY" secondItem="q2R-kq-ClE" secondAttribute="centerY" constant="30" id="pav-aA-RFy"/>
                                     <constraint firstItem="HCG-FV-2Oe" firstAttribute="height" secondItem="2le-Gy-7r9" secondAttribute="height" id="r7L-fr-Mzr"/>
                                     <constraint firstItem="HCG-FV-2Oe" firstAttribute="centerX" secondItem="2le-Gy-7r9" secondAttribute="centerX" id="wtE-Kb-8Ul"/>
                                 </constraints>
@@ -94,12 +98,29 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="iW5-Mo-Gcw">
+                                <rect key="frame" x="22" y="60" width="276" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="iW5-Mo-Gcw" secondAttribute="height" multiplier="5:1" id="rHM-8z-I2p"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Powered by VISA" translatesAutoresizingMaskIntoConstraints="NO" id="o56-RF-4he">
+                                <rect key="frame" x="4" y="345" width="312" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="o56-RF-4he" secondAttribute="height" multiplier="25:4" id="DHL-SB-Kk8"/>
+                                    <constraint firstAttribute="height" constant="50" id="IJI-Aa-tct"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="q2R-kq-ClE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6cz-vB-QA5"/>
+                            <constraint firstItem="o56-RF-4he" firstAttribute="top" secondItem="q2R-kq-ClE" secondAttribute="bottom" constant="30" id="7k5-Tz-pk1"/>
+                            <constraint firstItem="iW5-Mo-Gcw" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.3" constant="180" id="Bbs-qR-8Nv"/>
+                            <constraint firstItem="o56-RF-4he" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FEn-Dk-Pmy"/>
                             <constraint firstItem="q2R-kq-ClE" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.3" constant="120" id="YOY-4R-UXa"/>
+                            <constraint firstItem="iW5-Mo-Gcw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cWH-ZD-9jD"/>
                             <constraint firstItem="q2R-kq-ClE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hc6-jP-VVF"/>
+                            <constraint firstItem="q2R-kq-ClE" firstAttribute="top" secondItem="iW5-Mo-Gcw" secondAttribute="bottom" constant="50" id="zib-Ww-Fbe"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -108,4 +129,8 @@
             <point key="canvasLocation" x="140" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Logo" width="500" height="100"/>
+        <image name="Powered by VISA" width="500" height="80"/>
+    </resources>
 </document>
