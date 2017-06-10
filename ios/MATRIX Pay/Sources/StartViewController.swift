@@ -11,11 +11,11 @@ import UIKit
 class StartViewController: UIViewController {
 
     @IBAction func paymentPressed(_ sender: UIButton) {
-
+        push(viewController: PaymentViewController.self, animated: true)
     }
 
     @IBAction func registerPressed(_ sender: UIButton) {
-
+        push(viewController: RegisterViewController.self, animated: true)
     }
 
     override func viewDidLoad() {
