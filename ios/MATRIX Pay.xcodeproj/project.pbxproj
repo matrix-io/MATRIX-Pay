@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08408C90E6D79EAE5A1E022C /* Pods_MATRIX_Pay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A7E32952290D5AF058E157 /* Pods_MATRIX_Pay.framework */; };
 		527B02721EEC4027004A9361 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527B02701EEC4027004A9361 /* AppDelegate.swift */; };
 		527B02731EEC4027004A9361 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527B02711EEC4027004A9361 /* ViewController.swift */; };
 		527B027A1EEC4084004A9361 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527B02781EEC4084004A9361 /* LaunchScreen.storyboard */; };
@@ -22,6 +23,9 @@
 		527B02781EEC4084004A9361 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		527B02791EEC4084004A9361 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		527B027F1EEC4119004A9361 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		62A7E32952290D5AF058E157 /* Pods_MATRIX_Pay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MATRIX_Pay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		85CEC271FD5795BA0A9477F8 /* Pods-MATRIX Pay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MATRIX Pay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MATRIX Pay/Pods-MATRIX Pay.debug.xcconfig"; sourceTree = "<group>"; };
+		FD78A8477970C7698E023681 /* Pods-MATRIX Pay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MATRIX Pay.release.xcconfig"; path = "Pods/Target Support Files/Pods-MATRIX Pay/Pods-MATRIX Pay.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08408C90E6D79EAE5A1E022C /* Pods_MATRIX_Pay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A78089A90B698014F6568B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				62A7E32952290D5AF058E157 /* Pods_MATRIX_Pay.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		524695411EEC3C3E00A88D16 = {
 			isa = PBXGroup;
 			children = (
 				5246954C1EEC3C3E00A88D16 /* MATRIX Pay */,
 				5246954B1EEC3C3E00A88D16 /* Products */,
+				7FAF00DFBAC7DC6B378D8644 /* Pods */,
+				4A78089A90B698014F6568B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +111,15 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		7FAF00DFBAC7DC6B378D8644 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				85CEC271FD5795BA0A9477F8 /* Pods-MATRIX Pay.debug.xcconfig */,
+				FD78A8477970C7698E023681 /* Pods-MATRIX Pay.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +127,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5246955C1EEC3C3E00A88D16 /* Build configuration list for PBXNativeTarget "MATRIX Pay" */;
 			buildPhases = (
+				B64AA4CFD3D2F2EBCFAA6E39 /* [CP] Check Pods Manifest.lock */,
 				524695461EEC3C3E00A88D16 /* Sources */,
 				524695471EEC3C3E00A88D16 /* Frameworks */,
 				524695481EEC3C3E00A88D16 /* Resources */,
+				FA31D843A9850DF857B6D252 /* [CP] Embed Pods Frameworks */,
+				868A123B551C705885C531A5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -163,6 +190,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		868A123B551C705885C531A5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MATRIX Pay/Pods-MATRIX Pay-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B64AA4CFD3D2F2EBCFAA6E39 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FA31D843A9850DF857B6D252 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MATRIX Pay/Pods-MATRIX Pay-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		524695461EEC3C3E00A88D16 /* Sources */ = {
@@ -274,6 +349,7 @@
 		};
 		5246955D1EEC3C3E00A88D16 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85CEC271FD5795BA0A9477F8 /* Pods-MATRIX Pay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = D97BP28TP2;
@@ -287,6 +363,7 @@
 		};
 		5246955E1EEC3C3E00A88D16 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD78A8477970C7698E023681 /* Pods-MATRIX Pay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = D97BP28TP2;
