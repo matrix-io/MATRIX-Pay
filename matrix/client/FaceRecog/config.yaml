@@ -1,0 +1,19 @@
+# do not touch this line
+configVersion: 2
+
+description: Face recognition for hackathon
+keywords: Recognition
+name: FaceRecog
+displayName: Face Recog
+
+events:
+  - train
+  - recog
+  - reset
+  - stop
+  - listtag
+  
+services:
+  re:
+    engine: recognition
+    type: face
