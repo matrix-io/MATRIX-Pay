@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,18 +20,18 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLc-0a-YkV">
-                                <rect key="frame" x="0.0" y="240" width="320" height="240"/>
+                                <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
                                 <color key="backgroundColor" red="0.21651980377906976" green="0.62442047496046515" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q2R-kq-ClE">
-                                <rect key="frame" x="52" y="150" width="216" height="180"/>
+                                <rect key="frame" x="71.5" y="243.5" width="232.5" height="180"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2le-Gy-7r9">
-                                        <rect key="frame" x="40.5" y="30" width="136" height="50"/>
+                                        <rect key="frame" x="40.5" y="30" width="152.5" height="50"/>
                                         <color key="backgroundColor" red="0.40000000000000002" green="0.74117647058823533" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="HIY-Oa-iGe"/>
@@ -53,7 +53,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCG-FV-2Oe">
-                                        <rect key="frame" x="40.5" y="100" width="136" height="50"/>
+                                        <rect key="frame" x="40.5" y="100" width="152.5" height="50"/>
                                         <color key="backgroundColor" red="0.40000000000000002" green="0.74117647058823533" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="Register">
@@ -103,13 +103,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="iW5-Mo-Gcw">
-                                <rect key="frame" x="22" y="45" width="276" height="55"/>
+                                <rect key="frame" x="41.5" y="135" width="292.5" height="58.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="iW5-Mo-Gcw" secondAttribute="height" multiplier="5:1" id="rHM-8z-I2p"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Powered by VISA" translatesAutoresizingMaskIntoConstraints="NO" id="o56-RF-4he">
-                                <rect key="frame" x="32" y="350" width="256" height="41"/>
+                                <rect key="frame" x="51.5" y="443.5" width="272.5" height="43.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="o56-RF-4he" secondAttribute="height" multiplier="25:4" id="DHL-SB-Kk8"/>
                                 </constraints>
