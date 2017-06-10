@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  StartViewController.swift
 //  MATRIX Pay
 //
 //  Created by Nikolai Vazquez on 6/10/17.
@@ -8,7 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class StartViewController: UIViewController {
+
+    @IBAction func paymentPressed(_ sender: UIButton) {
+
+    }
+
+    @IBAction func registerPressed(_ sender: UIButton) {
+
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
