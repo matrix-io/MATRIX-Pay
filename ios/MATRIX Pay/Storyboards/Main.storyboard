@@ -23,14 +23,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLc-0a-YkV">
+                                <rect key="frame" x="0.0" y="240" width="320" height="240"/>
+                                <color key="backgroundColor" red="0.21651980377906976" green="0.62442047496046515" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q2R-kq-ClE">
-                                <rect key="frame" x="52" y="165" width="216" height="150"/>
+                                <rect key="frame" x="52" y="150" width="216" height="180"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2le-Gy-7r9">
-                                        <rect key="frame" x="40" y="25" width="136" height="40"/>
+                                        <rect key="frame" x="40.5" y="30" width="136" height="50"/>
                                         <color key="backgroundColor" red="0.40000000000000002" green="0.74117647058823533" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="HIY-Oa-iGe"/>
+                                            <constraint firstAttribute="height" constant="50" id="HIY-Oa-iGe"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="Make Payment">
@@ -49,7 +53,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCG-FV-2Oe">
-                                        <rect key="frame" x="40" y="85" width="136" height="40"/>
+                                        <rect key="frame" x="40.5" y="100" width="136" height="50"/>
                                         <color key="backgroundColor" red="0.40000000000000002" green="0.74117647058823533" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="Register">
@@ -73,25 +77,25 @@
                                     <constraint firstAttribute="trailing" secondItem="2le-Gy-7r9" secondAttribute="trailing" constant="40" id="CwX-rK-wza"/>
                                     <constraint firstItem="HCG-FV-2Oe" firstAttribute="width" secondItem="2le-Gy-7r9" secondAttribute="width" id="NZl-Sb-hei"/>
                                     <constraint firstItem="2le-Gy-7r9" firstAttribute="leading" secondItem="q2R-kq-ClE" secondAttribute="leading" constant="40" id="Teu-RH-zAl"/>
-                                    <constraint firstItem="2le-Gy-7r9" firstAttribute="centerY" secondItem="q2R-kq-ClE" secondAttribute="centerY" constant="-30" id="gbO-jf-BUK"/>
-                                    <constraint firstAttribute="height" constant="150" id="mNZ-r8-zma"/>
-                                    <constraint firstItem="HCG-FV-2Oe" firstAttribute="centerY" secondItem="q2R-kq-ClE" secondAttribute="centerY" constant="30" id="pav-aA-RFy"/>
+                                    <constraint firstItem="2le-Gy-7r9" firstAttribute="centerY" secondItem="q2R-kq-ClE" secondAttribute="centerY" constant="-35" id="gbO-jf-BUK"/>
+                                    <constraint firstAttribute="height" constant="180" id="mNZ-r8-zma"/>
+                                    <constraint firstItem="HCG-FV-2Oe" firstAttribute="centerY" secondItem="q2R-kq-ClE" secondAttribute="centerY" constant="35" id="pav-aA-RFy"/>
                                     <constraint firstItem="HCG-FV-2Oe" firstAttribute="height" secondItem="2le-Gy-7r9" secondAttribute="height" id="r7L-fr-Mzr"/>
                                     <constraint firstItem="HCG-FV-2Oe" firstAttribute="centerX" secondItem="2le-Gy-7r9" secondAttribute="centerX" id="wtE-Kb-8Ul"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
                                     <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
-                                        <size key="value" width="0.0" height="2"/>
+                                        <size key="value" width="0.0" height="3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowUIColor">
                                         <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
-                                        <real key="value" value="0.5"/>
+                                        <real key="value" value="0.45000000000000001"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
-                                        <integer key="value" value="2"/>
+                                        <integer key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="8"/>
@@ -99,26 +103,31 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="iW5-Mo-Gcw">
-                                <rect key="frame" x="22" y="60" width="276" height="55"/>
+                                <rect key="frame" x="22" y="45" width="276" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="iW5-Mo-Gcw" secondAttribute="height" multiplier="5:1" id="rHM-8z-I2p"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Powered by VISA" translatesAutoresizingMaskIntoConstraints="NO" id="o56-RF-4he">
-                                <rect key="frame" x="4" y="345" width="312" height="50"/>
+                                <rect key="frame" x="32" y="350" width="256" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="o56-RF-4he" secondAttribute="height" multiplier="25:4" id="DHL-SB-Kk8"/>
-                                    <constraint firstAttribute="height" constant="50" id="IJI-Aa-tct"/>
                                 </constraints>
                             </imageView>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="q2R-kq-ClE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6cz-vB-QA5"/>
-                            <constraint firstItem="o56-RF-4he" firstAttribute="top" secondItem="q2R-kq-ClE" secondAttribute="bottom" constant="30" id="7k5-Tz-pk1"/>
+                            <constraint firstItem="o56-RF-4he" firstAttribute="top" secondItem="q2R-kq-ClE" secondAttribute="bottom" constant="20" id="7k5-Tz-pk1"/>
                             <constraint firstItem="iW5-Mo-Gcw" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.3" constant="180" id="Bbs-qR-8Nv"/>
                             <constraint firstItem="o56-RF-4he" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FEn-Dk-Pmy"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WLc-0a-YkV" secondAttribute="bottom" id="Phz-h5-gja"/>
+                            <constraint firstItem="WLc-0a-YkV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="X0b-Aw-mdh"/>
+                            <constraint firstItem="WLc-0a-YkV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="Xfk-kY-mMY"/>
                             <constraint firstItem="q2R-kq-ClE" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.3" constant="120" id="YOY-4R-UXa"/>
+                            <constraint firstItem="o56-RF-4he" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.3" constant="160" id="Ys0-yI-knA"/>
                             <constraint firstItem="iW5-Mo-Gcw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cWH-ZD-9jD"/>
+                            <constraint firstAttribute="trailing" secondItem="WLc-0a-YkV" secondAttribute="trailing" id="f7p-Sz-kxW"/>
                             <constraint firstItem="q2R-kq-ClE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hc6-jP-VVF"/>
                             <constraint firstItem="q2R-kq-ClE" firstAttribute="top" secondItem="iW5-Mo-Gcw" secondAttribute="bottom" constant="50" id="zib-Ww-Fbe"/>
                         </constraints>
