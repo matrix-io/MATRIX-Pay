@@ -1,5 +1,13 @@
 
-# Created by https://www.gitignore.io/api/macos,linux,windows,node,xcode
+# Created by https://www.gitignore.io/api/macos,linux,windows,node,xcode,cocoapods
+
+### CocoaPods ###
+## CocoaPods GitIgnore Template
+
+# CocoaPods - Only use to conserve bandwidth / Save time on Pushing
+#           - Also handy if you have a lage number of dependant pods
+#           - AS PER https://guides.cocoapods.org/using/using-cocoapods.html NEVER IGONRE THE LOCK FILE
+Pods/
 
 ### Linux ###
 *~
@@ -157,4 +165,4 @@ xcuserdata/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 
-# End of https://www.gitignore.io/api/macos,linux,windows,node,xcode
+# End of https://www.gitignore.io/api/macos,linux,windows,node,xcode,cocoapods

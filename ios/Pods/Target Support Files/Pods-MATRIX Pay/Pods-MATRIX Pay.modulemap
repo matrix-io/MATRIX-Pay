@@ -1,6 +1,0 @@
-framework module Pods_MATRIX_Pay {
-  umbrella header "Pods-MATRIX Pay-umbrella.h"
-
-  export *
-  module * { export * }
-}
