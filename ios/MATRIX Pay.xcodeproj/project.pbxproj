@@ -96,6 +96,7 @@
 				TargetAttributes = {
 					524695491EEC3C3E00A88D16 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = D97BP28TP2;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -262,6 +263,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = D97BP28TP2;
 				INFOPLIST_FILE = "MATRIX Pay/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "one.matrix.MATRIX-Pay";
@@ -274,6 +276,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = D97BP28TP2;
 				INFOPLIST_FILE = "MATRIX Pay/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "one.matrix.MATRIX-Pay";
@@ -301,6 +304,7 @@
 				5246955E1EEC3C3E00A88D16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
