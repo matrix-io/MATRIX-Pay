@@ -1,15 +1,12 @@
 PODS:
-  - Cartography (1.1.0)
   - Socket.IO-Client-Swift (10.0.0)
 
 DEPENDENCIES:
-  - Cartography (~> 1.1.0)
   - Socket.IO-Client-Swift (~> 10.0.0)
 
 SPEC CHECKSUMS:
-  Cartography: 0538ccb4044acbbda2266335fc58cb4228794d90
   Socket.IO-Client-Swift: 9c5b4e5e76e30e1b9a1804c40e11dad0a002b1a4
 
-PODFILE CHECKSUM: 000dd8b4b29da138787ed01f453f6beeb2defb48
+PODFILE CHECKSUM: f4dcebc45b6afb311cceec54e8067a8f14954e6c
 
 COCOAPODS: 1.2.1
