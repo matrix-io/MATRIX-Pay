@@ -23,9 +23,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLc-0a-YkV">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLc-0a-YkV" customClass="PastelView" customModule="Pastel">
                                 <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
-                                <color key="backgroundColor" red="0.21651980377906976" green="0.62442047496046515" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q2R-kq-ClE">
                                 <rect key="frame" x="71.5" y="243.5" width="232.5" height="180"/>
@@ -139,6 +138,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bWd-XQ-Q6j"/>
+                    <connections>
+                        <outlet property="colorView" destination="WLc-0a-YkV" id="dQk-MT-2Rg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

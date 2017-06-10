@@ -2,4 +2,5 @@ use_frameworks!
 
 target 'MATRIX Pay' do
     pod 'Socket.IO-Client-Swift', '~> 10.0.0'
+    pod 'Pastel', '~> 0.2.2'
 end

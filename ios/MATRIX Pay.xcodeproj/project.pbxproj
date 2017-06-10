@@ -17,6 +17,7 @@
 		52EBF5B51EEC92CC00134579 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBF5AF1EEC92CB00134579 /* PaymentViewController.swift */; };
 		52EBF5B61EEC92CC00134579 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBF5B01EEC92CB00134579 /* RegisterViewController.swift */; };
 		52EBF5B71EEC92CC00134579 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBF5B11EEC92CB00134579 /* StartViewController.swift */; };
+		52EBF5B91EEC982600134579 /* UIColor+MP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBF5B81EEC982600134579 /* UIColor+MP.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		52EBF5AF1EEC92CB00134579 /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		52EBF5B01EEC92CB00134579 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		52EBF5B11EEC92CB00134579 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		52EBF5B81EEC982600134579 /* UIColor+MP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+MP.swift"; sourceTree = "<group>"; };
 		62A7E32952290D5AF058E157 /* Pods_MATRIX_Pay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MATRIX_Pay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85CEC271FD5795BA0A9477F8 /* Pods-MATRIX Pay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MATRIX Pay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MATRIX Pay/Pods-MATRIX Pay.debug.xcconfig"; sourceTree = "<group>"; };
 		FD78A8477970C7698E023681 /* Pods-MATRIX Pay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MATRIX Pay.release.xcconfig"; path = "Pods/Target Support Files/Pods-MATRIX Pay/Pods-MATRIX Pay.release.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			children = (
 				52EBF5AC1EEC92CB00134579 /* CALayer+MP.swift */,
 				52EBF5AD1EEC92CB00134579 /* UIViewController+MP.swift */,
+				52EBF5B81EEC982600134579 /* UIColor+MP.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52EBF5B31EEC92CC00134579 /* CALayer+MP.swift in Sources */,
+				52EBF5B91EEC982600134579 /* UIColor+MP.swift in Sources */,
 				52EBF5B61EEC92CC00134579 /* RegisterViewController.swift in Sources */,
 				52EBF5B41EEC92CC00134579 /* UIViewController+MP.swift in Sources */,
 				52EBF5B21EEC92CB00134579 /* AppDelegate.swift in Sources */,
