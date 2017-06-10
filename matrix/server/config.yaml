@@ -1,0 +1,7 @@
+# do not touch this line
+configVersion: 2
+
+description: database and facial verification for MATRIX pay
+keywords: db database authentication recognition
+name: server
+displayName: Server
