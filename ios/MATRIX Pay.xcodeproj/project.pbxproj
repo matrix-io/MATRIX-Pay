@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		08408C90E6D79EAE5A1E022C /* Pods_MATRIX_Pay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A7E32952290D5AF058E157 /* Pods_MATRIX_Pay.framework */; };
+		525C91341EEC68D800030493 /* CALayer+MP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C91331EEC68D800030493 /* CALayer+MP.swift */; };
 		527B02721EEC4027004A9361 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527B02701EEC4027004A9361 /* AppDelegate.swift */; };
 		527B02731EEC4027004A9361 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527B02711EEC4027004A9361 /* ViewController.swift */; };
 		527B027A1EEC4084004A9361 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527B02781EEC4084004A9361 /* LaunchScreen.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		5246954A1EEC3C3E00A88D16 /* MATRIX Pay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MATRIX Pay.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		525C91331EEC68D800030493 /* CALayer+MP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+MP.swift"; sourceTree = "<group>"; };
 		527B02701EEC4027004A9361 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		527B02711EEC4027004A9361 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		527B02751EEC403B004A9361 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			children = (
 				527B02701EEC4027004A9361 /* AppDelegate.swift */,
 				527B02711EEC4027004A9361 /* ViewController.swift */,
+				525C91331EEC68D800030493 /* CALayer+MP.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			files = (
 				527B02721EEC4027004A9361 /* AppDelegate.swift in Sources */,
 				527B02731EEC4027004A9361 /* ViewController.swift in Sources */,
+				525C91341EEC68D800030493 /* CALayer+MP.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
