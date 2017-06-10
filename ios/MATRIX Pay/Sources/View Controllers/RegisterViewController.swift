@@ -10,10 +10,6 @@ import UIKit
 
 class RegisterViewController: UIViewController {
 
-    @IBAction func exitView(_ sender: Any) {
-        navigationController?.popToRootViewController(animated: true)
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
