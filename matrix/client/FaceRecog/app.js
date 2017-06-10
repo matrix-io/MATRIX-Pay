@@ -10,14 +10,15 @@ matrix.on('reset', function() {
 ////// LIST TAG FUNCTION //////
 matrix.on('listtag', function() {
 
-matrix.service('recognition').getTags().then(function(tags) {
-matrix.led('green').render();
-setTimeout(function() {
-    matrix.led('black').render();
-}, 1000);
-console.log('>>>>>>>>>>TAGS>>>>>>>>>>>>>>', tags);
+  matrix.service('recognition').getTags().then(function(tags) {
+  matrix.led('green').render();
+  setTimeout(function() {
+      matrix.led('black').render();
+  }, 1000);
+  console.log('>>>>>>>>>>TAGS>>>>>>>>>>>>>>', tags);
+  });
 });
-});
+
 
 ////// TRAIN FACE FUNCTION /////
 matrix.on('train', function(data) {
@@ -30,15 +31,14 @@ matrix.on('train', function(data) {
     var l = setInterval(function() {
     matrix.led([{
         arc: Math.round(180 * Math.sin(a)),
-        color: 'darkgreen',
+        color: 'blue',
         start: a2
     }, {
         arc: -Math.round(180 * Math.sin(a)),
-        color: 'darkgreen',
+        color: 'blue',
         start: a2 + 180
     }]).render();
     a = (a < 0) ? 180 : a - 0.1;
-    //a2 = (a2 > 360) ? 0 : a2 + 5;
     }, 25);
 
     function stopLights() {
@@ -57,9 +57,10 @@ matrix.on('train', function(data) {
         }).render();
     } else {
         trained = true;
-        matrix.led('blue').render();
+        matrix.led('green').render();
         console.log('trained!', data);
         matrix.service('recognition').stop();
+        stopLights();
 
     }
   });
@@ -67,21 +68,20 @@ matrix.on('train', function(data) {
 ////// RECOGNITION FUNCTION //////
 matrix.on('recog', function() {
   // lighting
-  var a = 180;
-  var a2 = 90;
-  var l = setInterval(function() {
+     var a = 180;
+    var a2 = 0;
+    var l = setInterval(function() {
     matrix.led([{
-      arc: Math.round(180 * Math.sin(a)),
-      color: 'darkblue',
-      start: a2
+        arc: Math.round(180 * Math.sin(a)),
+        color: 'blue',
+        start: a2
     }, {
-      arc: -Math.round(180 * Math.sin(a)),
-      color: 'darkblue',
-      start: a2 + 180
+        arc: -Math.round(180 * Math.sin(a)),
+        color: 'blue',
+        start: a2 + 180
     }]).render();
     a = (a < 0) ? 180 : a - 0.1;
-    //a2 = (a2 > 360) ? 0 : a2 + 5;
-  }, 25);
+    }, 25);
 
   function stopLights() {
     clearInterval(l);
@@ -93,10 +93,12 @@ matrix.on('recog', function() {
 
     var MinDistanceFace = _.values(data.matches);
     MinDistanceFace = _.sortBy(MinDistanceFace, ['score'])[0];
+    //console.log('<<<<<<<Matches>>>>>>>>>>>>>>>>>'+ JSON.stringify(data.matches));
 
     console.log('Min Distance Face', MinDistanceFace);
     if (MinDistanceFace.score < 0.80) {
       matrix.led('green').render();
+      
     } else {
       matrix.led('red').render();
     }
