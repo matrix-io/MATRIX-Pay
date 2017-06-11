@@ -11,12 +11,6 @@ import SocketIO
 
 var emailResult: Int8 = -1
 
-enum TrainState {
-    case waiting
-    case error
-    case success
-}
-
 class EmailViewController: UIViewController {
 
     private var shouldContinue = true
@@ -38,13 +32,13 @@ class EmailViewController: UIViewController {
 
         shouldContinue = false
 
-        socket.emit("TrainRequest", true, email)
+        socket.emit("RegisterRequest", true, email)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        socket.on("TrainResult") { [weak self] data, _ in
+        socket.on("RegisterResult") { [weak self] data, _ in
             guard let `self` = self else {
                 return
             }
