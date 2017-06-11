@@ -11,7 +11,7 @@ import SocketIO
 
 var emailResult: Int8 = -1
 
-class EmailViewController: UIViewController {
+class EmailViewController: UIViewController, UITextFieldDelegate {
 
     private var shouldContinue = true
 
@@ -37,6 +37,8 @@ class EmailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        emailField.delegate = self
 
         socket.on(resultOf: .register) { [weak self] data, _ in
             guard let `self` = self else {
@@ -76,6 +78,12 @@ class EmailViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         shouldContinue = true
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        continueToPayInfo()
+        return false
     }
 
 }
