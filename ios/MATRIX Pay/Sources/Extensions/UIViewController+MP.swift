@@ -12,7 +12,7 @@ extension UIViewController {
 
     @IBAction func exitToRoot(_ sender: Any) {
         if type(of: self) == RegisterViewController.self {
-            socket.emit("RegisterCancel")
+            socket.emit(cancelFor: .register)
         }
         navigationController?.popToRootViewController(animated: true)
     }
