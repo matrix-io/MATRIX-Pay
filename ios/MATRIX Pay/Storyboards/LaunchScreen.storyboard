@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,9 +23,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="2wd-3G-MMA">
-                                <rect key="frame" x="56" y="267.5" width="262.5" height="52.5"/>
+                                <rect key="frame" x="35" y="263" width="305" height="61"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2wd-3G-MMA" secondAttribute="height" multiplier="5:1" id="Okb-nd-ZNF"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="500" id="vef-U8-6sx"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -34,7 +34,7 @@
                         <constraints>
                             <constraint firstItem="2wd-3G-MMA" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Iqc-6h-RMT"/>
                             <constraint firstItem="2wd-3G-MMA" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-40" id="Ojt-UI-MXg"/>
-                            <constraint firstItem="2wd-3G-MMA" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.7" id="tic-le-chG"/>
+                            <constraint firstItem="2wd-3G-MMA" firstAttribute="width" relation="lessThanOrEqual" secondItem="Ze5-6b-2t3" secondAttribute="width" constant="-70" id="tic-le-chG"/>
                         </constraints>
                     </view>
                 </viewController>
