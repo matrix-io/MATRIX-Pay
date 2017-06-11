@@ -9,6 +9,7 @@
 import UIKit
 import SocketIO
 import Dispatch
+import Pastel
 
 func price(from field: UITextField) -> UInt? {
     guard let text = field.text, let value = Double(text) else {
@@ -22,6 +23,8 @@ class PaymentViewController: UIViewController {
     @IBOutlet weak var priceField: UITextField!
 
     @IBOutlet weak var securityField: UITextField!
+
+    @IBOutlet var colorView: PastelView!
 
     private var shouldContinue = true
 
@@ -53,6 +56,17 @@ class PaymentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        colorView.startPoint = .bottomLeft
+        colorView.endPoint = .topRight
+
+        colorView.animationDuration = 2.4
+
+        colorView.setColors(colors: [
+            UIColor(r: 200, g: 245, b:  77),
+            UIColor(r:  64, g: 230, b: 155),
+            UIColor(r:   0, g: 139, b: 255)
+        ])
+
         socket.on(resultOf: .payment) { [weak self] data, _ in
             guard let `self` = self, let success = data.first as? Bool else {
                 return
@@ -78,6 +92,11 @@ class PaymentViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        colorView.startAnimation()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
