@@ -14,6 +14,9 @@ extension UIViewController {
         if type(of: self) == RegisterViewController.self {
             socket.emit(cancelFor: .register)
         }
+        if type(of: self) == PaymentViewController.self {
+            socket.emit(cancelFor: .payment)
+        }
         navigationController?.popToRootViewController(animated: true)
     }
 
