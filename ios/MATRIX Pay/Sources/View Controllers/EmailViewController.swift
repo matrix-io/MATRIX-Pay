@@ -32,13 +32,13 @@ class EmailViewController: UIViewController {
 
         shouldContinue = false
 
-        socket.emit("RegisterRequest", true, email)
+        socket.emit(requestFor: .register, true, email)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        socket.on("RegisterResult") { [weak self] data, _ in
+        socket.on(resultOf: .register) { [weak self] data, _ in
             guard let `self` = self else {
                 return
             }

@@ -47,13 +47,13 @@ class PaymentViewController: UIViewController {
 
         shouldContinue = false
 
-        socket.emit("PaymentRequest", price, sec)
+        socket.emit(requestFor: .payment, price, sec)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        socket.on("PaymentResult") { [weak self] data, _ in
+        socket.on(resultOf: .payment) { [weak self] data, _ in
             guard let `self` = self, let success = data.first as? Bool else {
                 return
             }

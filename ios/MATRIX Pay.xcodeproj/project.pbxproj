@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		08408C90E6D79EAE5A1E022C /* Pods_MATRIX_Pay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A7E32952290D5AF058E157 /* Pods_MATRIX_Pay.framework */; };
+		524337DF1EED48B3005D83F9 /* ClientOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524337DE1EED48B3005D83F9 /* ClientOperation.swift */; };
 		527B027A1EEC4084004A9361 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527B02781EEC4084004A9361 /* LaunchScreen.storyboard */; };
 		527B027B1EEC4084004A9361 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527B02791EEC4084004A9361 /* Main.storyboard */; };
 		527B02801EEC4119004A9361 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527B027F1EEC4119004A9361 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		524337DE1EED48B3005D83F9 /* ClientOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientOperation.swift; sourceTree = "<group>"; };
 		5246954A1EEC3C3E00A88D16 /* MATRIX Pay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MATRIX Pay.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		527B02751EEC403B004A9361 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		527B02781EEC4084004A9361 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				52EBF5A91EEC92CB00134579 /* Application */,
 				52EBF5AB1EEC92CB00134579 /* Extensions */,
 				52EBF5AE1EEC92CB00134579 /* View Controllers */,
+				524337DE1EED48B3005D83F9 /* ClientOperation.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				52EBF5B31EEC92CC00134579 /* CALayer+MP.swift in Sources */,
 				52EBF5B91EEC982600134579 /* UIColor+MP.swift in Sources */,
 				52EBF5B61EEC92CC00134579 /* RegisterViewController.swift in Sources */,
+				524337DF1EED48B3005D83F9 /* ClientOperation.swift in Sources */,
 				52EBF5BB1EECB64600134579 /* EmailViewController.swift in Sources */,
 				52EBF5B41EEC92CC00134579 /* UIViewController+MP.swift in Sources */,
 				52EBF5B21EEC92CB00134579 /* AppDelegate.swift in Sources */,
