@@ -483,7 +483,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Day" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bgh-tF-ehD">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Year" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bgh-tF-ehD">
                                 <rect key="frame" x="225" y="253" width="84.5" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -559,10 +559,10 @@
                     <navigationItem key="navigationItem" id="ruq-ff-RIa"/>
                     <connections>
                         <outlet property="ccCvcField" destination="o0F-58-Usn" id="48v-mD-iRS"/>
-                        <outlet property="ccDayField" destination="Bgh-tF-ehD" id="29v-bd-RlE"/>
                         <outlet property="ccMonthField" destination="6Ol-aU-ocs" id="NIz-v4-6Qc"/>
                         <outlet property="ccNameField" destination="bwM-Ro-Jwh" id="Bzh-dJ-Xyv"/>
                         <outlet property="ccNumberField" destination="seM-bY-k2I" id="6Hy-AO-HNO"/>
+                        <outlet property="ccYearField" destination="Bgh-tF-ehD" id="RKg-mI-K1H"/>
                         <outlet property="securityField" destination="58A-md-EMv" id="Nvr-oJ-U5q"/>
                     </connections>
                 </viewController>

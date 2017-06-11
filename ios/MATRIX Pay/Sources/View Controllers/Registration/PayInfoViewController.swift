@@ -24,7 +24,7 @@ class PayInfoViewController: UIViewController {
 
     @IBOutlet weak var ccMonthField: UITextField!
 
-    @IBOutlet weak var ccDayField: UITextField!
+    @IBOutlet weak var ccYearField: UITextField!
 
     @IBOutlet weak var ccNameField: UITextField!
 
@@ -37,8 +37,8 @@ class PayInfoViewController: UIViewController {
             let num = ccNumberField.text,
             let cvc = ccCvcField.text.flatMap(handle),
             let mon = ccMonthField.text.flatMap(handle),
-            let day = ccMonthField.text.flatMap(handle),
-            let nam = ccNameField.text,
+            let year = ccYearField.text.flatMap(handle),
+            let name = ccNameField.text,
             let sec = securityField.text.flatMap(handle) else {
                 print("Some value isn't right")
                 return
@@ -51,8 +51,8 @@ class PayInfoViewController: UIViewController {
             "ccnum": num,
             "cccvc": cvc,
             "ccexpmon": mon,
-            "ccexpday": day,
-            "ccname": nam
+            "ccexpyear": year,
+            "ccname": name
         ]
 
         socket.emit("UserInfo", userInfo)
