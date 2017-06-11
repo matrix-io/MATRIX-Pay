@@ -2,8 +2,7 @@ module.exports = {
 	reset: matrixReset,
 	listTags: matrixListTags,
 	trainFace: trainFace,
-	recognize: recogFace,
-	stop: stop
+	recognize: recogFace
 }
 function matrixReset(username_email) {
     matrix.service('recognition').untrain(username_email);
@@ -25,7 +24,7 @@ function matrixListTags() {
 }
 ////// TRAIN FACE FUNCTION /////
 // trains a user's face
-function trainFace(username_email) {
+function trainFace(username_email, cb) {
     var trained = false;
     console.log('training started>>>>>');
     // lighting
@@ -46,8 +45,10 @@ function trainFace(username_email) {
     function stopLights() {
         clearInterval(l);
     }
+
+    console.log(username_email);
     // starts training 
-    matrix.service('recognition').train(username_email).then(function(data) {
+    matrix.service('recognition').train(''+username_email).then(function(data) {
         stopLights();
         //continue if training is not finished
         if (!trained && data.hasOwnProperty('count')) {
@@ -66,14 +67,16 @@ function trainFace(username_email) {
             matrix.service('recognition').stop();
             setTimeout(function() {
             matrix.led('black').render();
-            }, 1000);
-            io.emit('TrainSuccess', true); //SEND DATA TO CLIENT
+            }, 2000);
+            cb();
+            //io.emit('TrainSuccess', true); //SEND DATA TO CLIENT
+            return true;
         }
     });
 }
 ////// RECOGNITION FUNCTION //////
 // can verify if a person is registered
-function recogFace() {
+function recogFace(username_email, cb) {
     // lighting
     var a = 180;
     var a2 = 0;
@@ -92,34 +95,43 @@ function recogFace() {
     function stopLights() {
         clearInterval(l);
     }
+    console.log(username_email);
     // starts recognition
-    matrix.service('recognition').start(username_email).then(function(data) {
+    //let successCount = 0; 
+    matrix.service('recognition').start(''+username_email).then(function(data) {
         stopLights();
         console.log('RECOG>>>!', data);
         var MinDistanceFace = _.values(data.matches);
         MinDistanceFace = _.sortBy(MinDistanceFace, ['score'])[0];
         //console.log('<<<<<<<Matches>>>>>>>>>>>>>>>>>'+ JSON.stringify(data.matches));
         console.log('Min Distance Face', MinDistanceFace);
-        if (MinDistanceFace.score < 0.85) {
+        if (MinDistanceFace.score < 1.03) {
+            cb(true);
             matrix.led('green').render();
-            console.log('I know dis guy');
+            //console.log('I know dis guy');
             matrix.service('recognition').stop();
-            setTimeout(function() {
-            matrix.led('black').render();
-            }, 1000);
             
-        } else {
-            matrix.led('red').render();
-            console.log('I don know dis guy');
-            matrix.service('recognition').stop();
             setTimeout(function() {
-            matrix.led('black').render();
-            }, 1000);
+                matrix.led('black').render();
+            }, 2000);
+            //successCount++;
+        } else {
+            cb(false);
+            matrix.led('red').render();
+            //console.log('I don know dis guy');
+            matrix.service('recognition').stop();
+            
+            setTimeout(function() {
+                matrix.led('black').render();
+            }, 2000);
+
         }
+            // if(successCount > 0){
+            //     cb(true);
+            // }else{
+            //     cb(false);
+            // }
+
     });
-    console.log('recog!');
+ //   console.log('recog!');
 }
-////// STOP SERVICE FUNCTION //////
-matrix.on('stop', function() {
-    matrix.service('recognition').stop();
-});
