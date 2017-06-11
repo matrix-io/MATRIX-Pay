@@ -11,6 +11,9 @@ import UIKit
 extension UIViewController {
 
     @IBAction func exitToRoot(_ sender: Any) {
+        if type(of: self) == RegisterViewController.self {
+            socket.emit("RegisterCancel")
+        }
         navigationController?.popToRootViewController(animated: true)
     }
 

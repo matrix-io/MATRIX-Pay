@@ -18,6 +18,9 @@
 		52EBF5B61EEC92CC00134579 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBF5B01EEC92CB00134579 /* RegisterViewController.swift */; };
 		52EBF5B71EEC92CC00134579 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBF5B11EEC92CB00134579 /* StartViewController.swift */; };
 		52EBF5B91EEC982600134579 /* UIColor+MP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBF5B81EEC982600134579 /* UIColor+MP.swift */; };
+		52EBF5BB1EECB64600134579 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBF5BA1EECB64600134579 /* EmailViewController.swift */; };
+		52EBF5BD1EECC5DF00134579 /* PayInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBF5BC1EECC5DF00134579 /* PayInfoViewController.swift */; };
+		52EBF5BF1EECC71500134579 /* PaymentSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBF5BE1EECC71500134579 /* PaymentSegue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		52EBF5B01EEC92CB00134579 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		52EBF5B11EEC92CB00134579 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		52EBF5B81EEC982600134579 /* UIColor+MP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+MP.swift"; sourceTree = "<group>"; };
+		52EBF5BA1EECB64600134579 /* EmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
+		52EBF5BC1EECC5DF00134579 /* PayInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayInfoViewController.swift; sourceTree = "<group>"; };
+		52EBF5BE1EECC71500134579 /* PaymentSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentSegue.swift; sourceTree = "<group>"; };
 		62A7E32952290D5AF058E157 /* Pods_MATRIX_Pay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MATRIX_Pay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85CEC271FD5795BA0A9477F8 /* Pods-MATRIX Pay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MATRIX Pay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MATRIX Pay/Pods-MATRIX Pay.debug.xcconfig"; sourceTree = "<group>"; };
 		FD78A8477970C7698E023681 /* Pods-MATRIX Pay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MATRIX Pay.release.xcconfig"; path = "Pods/Target Support Files/Pods-MATRIX Pay/Pods-MATRIX Pay.release.xcconfig"; sourceTree = "<group>"; };
@@ -93,6 +99,7 @@
 				52EBF5A91EEC92CB00134579 /* Application */,
 				52EBF5AB1EEC92CB00134579 /* Extensions */,
 				52EBF5AE1EEC92CB00134579 /* View Controllers */,
+				52EBF5BE1EECC71500134579 /* PaymentSegue.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -146,6 +153,8 @@
 				52EBF5AF1EEC92CB00134579 /* PaymentViewController.swift */,
 				52EBF5B01EEC92CB00134579 /* RegisterViewController.swift */,
 				52EBF5B11EEC92CB00134579 /* StartViewController.swift */,
+				52EBF5BA1EECB64600134579 /* EmailViewController.swift */,
+				52EBF5BC1EECC5DF00134579 /* PayInfoViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -283,13 +292,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52EBF5BF1EECC71500134579 /* PaymentSegue.swift in Sources */,
 				52EBF5B31EEC92CC00134579 /* CALayer+MP.swift in Sources */,
 				52EBF5B91EEC982600134579 /* UIColor+MP.swift in Sources */,
 				52EBF5B61EEC92CC00134579 /* RegisterViewController.swift in Sources */,
+				52EBF5BB1EECB64600134579 /* EmailViewController.swift in Sources */,
 				52EBF5B41EEC92CC00134579 /* UIViewController+MP.swift in Sources */,
 				52EBF5B21EEC92CB00134579 /* AppDelegate.swift in Sources */,
 				52EBF5B51EEC92CC00134579 /* PaymentViewController.swift in Sources */,
 				52EBF5B71EEC92CC00134579 /* StartViewController.swift in Sources */,
+				52EBF5BD1EECC5DF00134579 /* PayInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

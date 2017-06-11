@@ -13,14 +13,6 @@ class StartViewController: UIViewController {
 
     @IBOutlet weak var colorView: PastelView!
 
-    @IBAction func paymentPressed(_ sender: UIButton) {
-        push(viewController: PaymentViewController.self, animated: true)
-    }
-
-    @IBAction func registerPressed(_ sender: UIButton) {
-        push(viewController: RegisterViewController.self, animated: true)
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,11 +36,9 @@ class StartViewController: UIViewController {
         colorView.startAnimation()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        colorView.startAnimation()
     }
 
-
 }
-

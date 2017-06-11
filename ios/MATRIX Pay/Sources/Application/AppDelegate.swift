@@ -7,15 +7,37 @@
 //
 
 import UIKit
+import Dispatch
+import SocketIO
+
+let address = URL(string: "http://192.168.0.106:3000")!
+let socket = SocketIOClient(socketURL: address)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        socket.on(clientEvent: .connect) { _ in
+            print("Connected")
+        }
+
+        socket.on(clientEvent: .statusChange) { data, _ in
+            guard case .notConnected? = data.first as? SocketIOClientStatus,
+                let root = self.window?.rootViewController as? UINavigationController else {
+                    return
+            }
+            root.popToRootViewController(animated: true)
+        }
+
+        socket.on(clientEvent: .error) { data, _ in
+            print("Error:", data)
+        }
+
+        socket.connect()
+
         return true
     }
 
