@@ -44,7 +44,7 @@ class EmailViewController: UIViewController, UITextFieldDelegate {
             guard let `self` = self else {
                 return
             }
-            let num = (data.first as? NSNumber)?.uint8Value ?? 1
+            let num = (data.first as? NSNumber)?.uint8Value ?? 2
             let alert: UIAlertController
 
             self.shouldContinue = true
