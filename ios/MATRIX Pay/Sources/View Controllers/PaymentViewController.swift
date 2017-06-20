@@ -68,6 +68,7 @@ class PaymentViewController: UIViewController {
         ])
 
         socket.on(resultOf: .payment) { [weak self] data, _ in
+            print("Payment result:", data)
             guard let `self` = self, let success = data.first as? Bool else {
                 return
             }
