@@ -106,17 +106,17 @@ function recogFace(username_email, cb) {
         if (MinDistanceFace.score < 0.85) {
             matrix.service('recognition').stop();
             matrix.led('rgb(0,50,0)').render();
-            cb(true);
             setTimeout(function() {
                 matrix.led('black').render();
             }, 1500);
+            cb(true);
         } else {
             matrix.service('recognition').stop();
             matrix.led('rgb(50,0,0)').render();
-            cb(false);
             setTimeout(function() {
                 matrix.led('black').render();
             }, 1500);
+            cb(false);
         }
     });
 }

@@ -35,11 +35,6 @@ io.on('connection', function(client) {
     console.log('user connected');
     //obtain user email to begin database registration
     client.on('RegisterRequest', function(user_email){
-        //console.log('Email: ' + user_email);
-        //console.log('Retry: ' + retry);
-
-        // if(!retry)
-        //     return
 
         //if training passed
         current_email = user_email;
