@@ -32,7 +32,7 @@ class EmailViewController: UIViewController, UITextFieldDelegate {
 
         shouldContinue = false
 
-        socket.emit(requestFor: .register, true, email)
+        socket.emit(requestFor: .register, email)
     }
 
     override func viewDidLoad() {
