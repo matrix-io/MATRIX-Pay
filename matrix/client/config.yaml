@@ -1,0 +1,13 @@
+# do not touch this line
+configVersion: 2
+
+description: connects to server
+keywords: ''
+name: client
+displayName: Client
+
+services:
+  re:
+    engine: recognition
+    type: face 
+
