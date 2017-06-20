@@ -6,6 +6,10 @@ keywords: ''
 name: client
 displayName: Client
 
+events:
+  - reset
+  - listtags
+
 services:
   re:
     engine: recognition

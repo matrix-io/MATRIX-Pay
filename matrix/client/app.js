@@ -17,8 +17,6 @@ function readData() {
     return JSON.parse(fs.readFileSync(__dirname+'/userDatabase.json', 'utf8'));//read json file    
 }
 
-
-
 var userDatabase = readData();
 var current_email = '';
 
@@ -35,11 +33,6 @@ io.on('connection', function(client) {
     console.log('user connected');
     //obtain user email to begin database registration
     client.on('RegisterRequest', function(user_email){
-        //console.log('Email: ' + user_email);
-        //console.log('Retry: ' + retry);
-
-        // if(!retry)
-        //     return
 
         //if training passed
         current_email = user_email;
@@ -74,8 +67,7 @@ io.on('connection', function(client) {
 
     //attempt to make a transaction
     client.on('PaymentRequest',function(price, security){
-        
-        console.log('price: ' + price);
+        price = price / 100;
         console.log('security: ' + security);
         
         //check if user face validates result : bool(true = pass) (false = fail)
@@ -101,10 +93,14 @@ io.on('connection', function(client) {
                 client.emit('PaymentResult', false)
             }    
         });
-        //emits result of visa payment response
         
     });
 });
-
+matrix.on('reset', function(){
+    fr.reset('hi');
+});
+matrix.on('listtags', function(){
+    fr.listTags();
+});
 io.listen(3001);
 console.log('server running');
