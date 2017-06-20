@@ -40,7 +40,7 @@ class EmailViewController: UIViewController, UITextFieldDelegate {
 
         emailField.delegate = self
 
-        socket.on(resultOf: .register) { [weak self] data, _ in
+        socket.once(resultOf: .register) { [weak self] data, _ in
             print("Register result:", data)
             guard let `self` = self else {
                 return
@@ -78,6 +78,7 @@ class EmailViewController: UIViewController, UITextFieldDelegate {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        socket.off(resultOf: .register)
         shouldContinue = true
     }
 

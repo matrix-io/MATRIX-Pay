@@ -36,6 +36,15 @@ extension SocketIOClient {
         return on(operation.result, callback: callback)
     }
 
+    @discardableResult
+    func once(resultOf operation: ClientOperation, callback: @escaping NormalCallback) -> UUID {
+        return once(operation.result, callback: callback)
+    }
+
+    func off(resultOf operation: ClientOperation) {
+        off(operation.result)
+    }
+
     func emit(requestFor operation: ClientOperation, _ items: SocketData...) {
         typealias T = (String, SocketData...) -> ()
         typealias U = (String, [SocketData]) -> ()

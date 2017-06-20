@@ -67,7 +67,7 @@ class PaymentViewController: UIViewController {
             UIColor(r:   0, g: 139, b: 255)
         ])
 
-        socket.on(resultOf: .payment) { [weak self] data, _ in
+        socket.once(resultOf: .payment) { [weak self] data, _ in
             print("Payment result:", data)
             guard let `self` = self, let success = data.first as? Bool else {
                 return
@@ -102,6 +102,7 @@ class PaymentViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        socket.off(resultOf: .payment)
         shouldContinue = true
     }
 
