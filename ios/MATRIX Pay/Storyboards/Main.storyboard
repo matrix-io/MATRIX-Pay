@@ -25,6 +25,22 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLc-0a-YkV" customClass="PastelView" customModule="Pastel">
                                 <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xfe-Hr-IAB">
+                                        <rect key="frame" x="158.5" y="273.5" width="57" height="30"/>
+                                        <state key="normal" title="Settings">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="2Xg-NL-d0v" kind="show" id="Y71-dc-DTn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.21651980379999999" green="0.62442047499999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Xfe-Hr-IAB" firstAttribute="centerX" secondItem="WLc-0a-YkV" secondAttribute="centerX" id="aug-fO-kvU"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xfe-Hr-IAB" secondAttribute="bottom" constant="30" id="r8P-eg-oOv"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q2R-kq-ClE">
                                 <rect key="frame" x="71.5" y="243.5" width="232.5" height="180"/>
@@ -160,6 +176,111 @@
             </objects>
             <point key="canvasLocation" x="140" y="138.98050974512745"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="8Lj-cO-MKC">
+            <objects>
+                <viewController id="2Xg-NL-d0v" customClass="SettingsViewController" customModule="MATRIX_Pay" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cbd-zF-Pen"/>
+                        <viewControllerLayoutGuide type="bottom" id="CG8-uS-ENw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2aF-DI-q7Y" customClass="PastelView" customModule="Pastel">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UEN-YW-aDb">
+                                <rect key="frame" x="37.5" y="157" width="300" height="273.5"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MATRIX IP Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kwj-d7-1Q2">
+                                        <rect key="frame" x="55" y="102" width="190" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="continue"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="2Xg-NL-d0v" id="5N6-Hc-lg5"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GMO-TG-GqL">
+                                        <rect key="frame" x="80" y="162" width="140" height="36"/>
+                                        <color key="backgroundColor" red="0.3999080062" green="0.74057346580000005" blue="0.99842864269999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="eUr-Wk-Qmz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Update">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                                <color key="value" red="0.1960784314" green="0.61568627450000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="updateSettings" destination="2Xg-NL-d0v" eventType="touchUpInside" id="E0p-5v-Vzw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPt-Gd-z0e">
+                                        <rect key="frame" x="10" y="0.0" width="134" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Return To Start"/>
+                                        <connections>
+                                            <action selector="exitToRoot:" destination="2Xg-NL-d0v" eventType="touchUpInside" id="JaE-kc-QGc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Kwj-d7-1Q2" firstAttribute="centerX" secondItem="UEN-YW-aDb" secondAttribute="centerX" id="AwG-Es-vik"/>
+                                    <constraint firstItem="Kwj-d7-1Q2" firstAttribute="centerY" secondItem="UEN-YW-aDb" secondAttribute="centerY" constant="-20" id="LG5-by-IWJ"/>
+                                    <constraint firstItem="cPt-Gd-z0e" firstAttribute="leading" secondItem="UEN-YW-aDb" secondAttribute="leading" constant="10" id="MT0-ba-B0u"/>
+                                    <constraint firstItem="cPt-Gd-z0e" firstAttribute="top" secondItem="UEN-YW-aDb" secondAttribute="top" id="c7x-Zs-YhW"/>
+                                    <constraint firstItem="Kwj-d7-1Q2" firstAttribute="width" secondItem="UEN-YW-aDb" secondAttribute="width" multiplier="0.8" constant="-50" id="hj4-FG-Jic"/>
+                                    <constraint firstItem="GMO-TG-GqL" firstAttribute="centerX" secondItem="UEN-YW-aDb" secondAttribute="centerX" id="qPm-gJ-ski"/>
+                                    <constraint firstItem="GMO-TG-GqL" firstAttribute="top" secondItem="Kwj-d7-1Q2" secondAttribute="bottom" constant="30" id="rUh-6v-KQd"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                        <size key="value" width="0.0" height="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowUIColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="0.45000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.21651980379999999" green="0.62442047499999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="UEN-YW-aDb" firstAttribute="height" secondItem="2aF-DI-q7Y" secondAttribute="height" multiplier="0.5" constant="-60" id="Deb-Ry-Zra"/>
+                            <constraint firstItem="UEN-YW-aDb" firstAttribute="centerY" secondItem="2aF-DI-q7Y" secondAttribute="centerY" constant="-40" id="G5B-Wi-6b5"/>
+                            <constraint firstItem="UEN-YW-aDb" firstAttribute="centerX" secondItem="2aF-DI-q7Y" secondAttribute="centerX" id="Zva-yS-XE1"/>
+                            <constraint firstItem="UEN-YW-aDb" firstAttribute="width" secondItem="2aF-DI-q7Y" secondAttribute="width" multiplier="0.8" id="qSd-yO-hE6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="colorView" destination="2aF-DI-q7Y" id="WlR-Wu-GE1"/>
+                        <outlet property="emailField" destination="Kwj-d7-1Q2" id="VzS-6s-Stw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aj3-6d-s6G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="882" y="-54"/>
+        </scene>
         <!--Payment View Controller-->
         <scene sceneID="ao2-qj-7uw">
             <objects>
@@ -269,7 +390,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nCJ-FS-PMI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1629.5999999999999" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1622" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cht-o5-hHh">

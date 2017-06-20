@@ -10,8 +10,50 @@ import UIKit
 import Dispatch
 import SocketIO
 
-let address = URL(string: "http://192.168.0.106:3000")!
-let socket = SocketIOClient(socketURL: address)
+let addressKey = "socketAddress"
+
+var socket = socketFromDefaults()
+
+func addressFromDefaults() -> URL? {
+    let defaults = UserDefaults.standard
+    if let value = defaults.url(forKey: addressKey) {
+        return value
+    } else if let value = defaults.string(forKey: addressKey).flatMap(URL.init) {
+        return value
+    } else {
+        return nil
+    }
+}
+
+func socketFromDefaults() -> SocketIOClient {
+    let url = addressFromDefaults() ?? URL(string: "http://192.168.1.226:3001")!
+    return SocketIOClient(socketURL: url)
+}
+
+func setupSocket() {
+    socket.on(clientEvent: .connect) { _ in
+        print("Connected")
+    }
+
+    socket.on(clientEvent: .statusChange) { data, _ in
+        print("Status change:", data)
+        guard case .notConnected? = data.first as? SocketIOClientStatus,
+            shouldPopOnDisconnect,
+            let window = UIApplication.shared.delegate?.window,
+            let root = window?.rootViewController as? UINavigationController else {
+                return
+        }
+        root.popToRootViewController(animated: true)
+    }
+
+    socket.on(clientEvent: .error) { data, _ in
+        print("Error:", data)
+    }
+
+    socket.connect()
+}
+
+var shouldPopOnDisconnect = true
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,24 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
-        socket.on(clientEvent: .connect) { _ in
-            print("Connected")
-        }
-
-        socket.on(clientEvent: .statusChange) { data, _ in
-            guard case .notConnected? = data.first as? SocketIOClientStatus,
-                let root = self.window?.rootViewController as? UINavigationController else {
-                    return
-            }
-            root.popToRootViewController(animated: true)
-        }
-
-        socket.on(clientEvent: .error) { data, _ in
-            print("Error:", data)
-        }
-
-        socket.connect()
+        setupSocket()
 
         return true
     }

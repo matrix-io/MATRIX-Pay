@@ -15,6 +15,7 @@
 		527B027A1EEC4084004A9361 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527B02781EEC4084004A9361 /* LaunchScreen.storyboard */; };
 		527B027B1EEC4084004A9361 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527B02791EEC4084004A9361 /* Main.storyboard */; };
 		527B02801EEC4119004A9361 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527B027F1EEC4119004A9361 /* Assets.xcassets */; };
+		528EC3391EF993C70098AEED /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528EC3381EF993C70098AEED /* SettingsViewController.swift */; };
 		52EBF5B21EEC92CB00134579 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBF5AA1EEC92CB00134579 /* AppDelegate.swift */; };
 		52EBF5B31EEC92CC00134579 /* CALayer+MP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBF5AC1EEC92CB00134579 /* CALayer+MP.swift */; };
 		52EBF5B41EEC92CC00134579 /* UIViewController+MP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBF5AD1EEC92CB00134579 /* UIViewController+MP.swift */; };
@@ -33,6 +34,7 @@
 		527B02781EEC4084004A9361 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		527B02791EEC4084004A9361 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		527B027F1EEC4119004A9361 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		528EC3381EF993C70098AEED /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		52EBF5AA1EEC92CB00134579 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52EBF5AC1EEC92CB00134579 /* CALayer+MP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+MP.swift"; sourceTree = "<group>"; };
 		52EBF5AD1EEC92CB00134579 /* UIViewController+MP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+MP.swift"; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				52EBF5B11EEC92CB00134579 /* StartViewController.swift */,
+				528EC3381EF993C70098AEED /* SettingsViewController.swift */,
 				52EBF5AF1EEC92CB00134579 /* PaymentViewController.swift */,
 				524337E01EED5503005D83F9 /* Registration */,
 			);
@@ -302,6 +305,7 @@
 			files = (
 				52EBF5B31EEC92CC00134579 /* CALayer+MP.swift in Sources */,
 				52EBF5B91EEC982600134579 /* UIColor+MP.swift in Sources */,
+				528EC3391EF993C70098AEED /* SettingsViewController.swift in Sources */,
 				524337DF1EED48B3005D83F9 /* ClientOperation.swift in Sources */,
 				52EBF5B41EEC92CC00134579 /* UIViewController+MP.swift in Sources */,
 				52EBF5B21EEC92CB00134579 /* AppDelegate.swift in Sources */,
