@@ -1,30 +1,26 @@
-module.exports = {
-	reset: matrixReset,
-	listTags: matrixListTags,
-	trainFace: trainFace,
-	recognize: recogFace
-}
-function matrixReset(username_email) {
+var username_email = 'daniel@gmail.com'
+console.log(username_email);
+matrix.on('reset', function() {
     matrix.service('recognition').untrain(username_email);
-    matrix.led('rgb(50,0,0)').render();
+    matrix.led('red').render();
     setTimeout(function() {
         matrix.led('black').render();
     }, 1000);
-}
+});
 ////// LIST TAG FUNCTION //////
 // Unknown
-function matrixListTags() {
+matrix.on('listtags', function() {
     matrix.service('recognition').getTags().then(function(tags) {
-        matrix.led('rgb(0,50,0)').render();
+        matrix.led('green').render();
         setTimeout(function() {
             matrix.led('black').render();
         }, 1000);
         console.log('>>>>>>>>>>TAGS>>>>>>>>>>>>>>', tags);
     });
-}
+});
 ////// TRAIN FACE FUNCTION /////
 // trains a user's face
-function trainFace(username_email, cb) {
+matrix.on('train', function(username_email/*, cb*/) {
     var trained = false;
     console.log('training started>>>>>');
     // lighting
@@ -34,11 +30,13 @@ function trainFace(username_email, cb) {
         matrix.led([{
             arc: Math.round(180 * Math.sin(a)),
             color: 'rgb(0,0,50)',
+            blend: true ,
             start: a2
         }, {
-            arc: -Math.round(180 * Math.sin(a)),
-            color: 'rgb(0,0,50)',
-            start: a2 + 180
+            arc: -Math.round(180 * Math.sin(a)) + 5,
+            color: 'rgb(50,50,50)',
+            blend: true ,
+            start: a2 + 175
         }]).render();
         a = (a < 0) ? 180 : a - 0.1;
     }, 25);
@@ -62,21 +60,21 @@ function trainFace(username_email, cb) {
         //training is finished
         else {
             trained = true;
-            matrix.led('green').render();
+            matrix.led('rgb(0,50,0)').render();
             console.log('trained!', data);
             matrix.service('recognition').stop();
             setTimeout(function() {
             matrix.led('black').render();
-            }, 1500);
-            cb();
+            }, 2000);
+            //cb();
             //io.emit('TrainSuccess', true); //SEND DATA TO CLIENT
             return true;
         }
     });
-}
+});
 ////// RECOGNITION FUNCTION //////
 // can verify if a person is registered
-function recogFace(username_email, cb) {
+matrix.on('recog',function(username_email/*, cb*/) {
     // lighting
     var a = 180;
     var a2 = 0;
@@ -84,11 +82,13 @@ function recogFace(username_email, cb) {
         matrix.led([{
             arc: Math.round(180 * Math.sin(a)),
             color: 'rgb(0,0,50)',
-            start: a2
+            blend: true ,
+            start: a2 - 5
         }, {
-            arc: -Math.round(180 * Math.sin(a)),
-            color: 'rgb(0,0,50)',
-            start: a2 + 180
+            arc: -Math.round(180 * Math.sin(a)) + 5,
+            color: 'rgb(50,50,50)',
+            blend: true ,
+            start: a2 + 175
         }]).render();
         a = (a < 0) ? 180 : a - 0.1;
     }, 25);
@@ -105,25 +105,25 @@ function recogFace(username_email, cb) {
         MinDistanceFace = _.sortBy(MinDistanceFace, ['score'])[0];
         //console.log('<<<<<<<Matches>>>>>>>>>>>>>>>>>'+ JSON.stringify(data.matches));
         console.log('Min Distance Face', MinDistanceFace);
-        if (MinDistanceFace.score < 0.85) {
+        if (MinDistanceFace.score < 0.80) {
             matrix.service('recognition').stop();
-            cb(true);
+            //cb(true);
             matrix.led('rgb(0,50,0)').render();
             
             setTimeout(function() {
                 matrix.led('black').render();
-            }, 1500);
+            }, 2000);
         } else {
             matrix.service('recognition').stop();
-            cb(false);
+            //cb(false);
             matrix.led('rgb(50,0,0)').render();
             
             setTimeout(function() {
                 matrix.led('black').render();
-            }, 1500);
+            }, 2000);
 
         }
 
     });
  
-}
+});
