@@ -1,5 +1,5 @@
 {
-  "name": "FaceRecog",
+  "name": "client",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cpu-stats": "^1.0.0"
+    "cpu-stats": "^1.0.0",
+    "jsonfile": "^3.0.0",
+    "request": "^2.81.0",
+    "socket.io": "^2.0.2"
   }
 }
