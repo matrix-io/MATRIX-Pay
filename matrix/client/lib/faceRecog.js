@@ -48,7 +48,7 @@ function trainFace(username_email, cb) {
 
     console.log(username_email);
     // starts training 
-    matrix.service('recognition').train(''+username_email).then(function(data) {
+    matrix.service('recognition').train(''+ username_email).then(function(data) {
         stopLights();
         //continue if training is not finished
         if (!trained && data.hasOwnProperty('count')) {
@@ -61,10 +61,10 @@ function trainFace(username_email, cb) {
         }
         //training is finished
         else {
+            matrix.service('recognition').stop();
             trained = true;
             matrix.led('green').render();
             console.log('trained!', data);
-            matrix.service('recognition').stop();
             setTimeout(function() {
             matrix.led('black').render();
             }, 1500);
@@ -97,33 +97,26 @@ function recogFace(username_email, cb) {
     }
     console.log(username_email);
     // starts recognition
-    //let successCount = 0; 
-    matrix.service('recognition').start(''+username_email).then(function(data) {
+    matrix.service('recognition').start(''+ username_email).then(function(data) {
         stopLights();
         console.log('RECOG>>>!', data);
         var MinDistanceFace = _.values(data.matches);
         MinDistanceFace = _.sortBy(MinDistanceFace, ['score'])[0];
-        //console.log('<<<<<<<Matches>>>>>>>>>>>>>>>>>'+ JSON.stringify(data.matches));
         console.log('Min Distance Face', MinDistanceFace);
         if (MinDistanceFace.score < 0.85) {
             matrix.service('recognition').stop();
-            cb(true);
             matrix.led('rgb(0,50,0)').render();
-            
+            cb(true);
             setTimeout(function() {
                 matrix.led('black').render();
             }, 1500);
         } else {
             matrix.service('recognition').stop();
-            cb(false);
             matrix.led('rgb(50,0,0)').render();
-            
+            cb(false);
             setTimeout(function() {
                 matrix.led('black').render();
             }, 1500);
-
         }
-
     });
- 
 }
