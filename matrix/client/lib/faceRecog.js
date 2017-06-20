@@ -126,12 +126,7 @@ function recogFace(username_email, cb) {
             }, 2000);
 
         }
-            // if(successCount > 0){
-            //     cb(true);
-            // }else{
-            //     cb(false);
-            // }
 
     });
- //   console.log('recog!');
+ 
 }
