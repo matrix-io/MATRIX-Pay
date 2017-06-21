@@ -10,6 +10,20 @@ import UIKit
 
 extension UIViewController {
 
+    @IBAction func exitToRoot(_ sender: Any) {
+        if type(of: self) == RegisterViewController.self {
+            socket.emit(cancelFor: .register)
+        }
+        if type(of: self) == PaymentViewController.self {
+            socket.emit(cancelFor: .payment)
+        }
+        navigationController?.popToRootViewController(animated: true)
+    }
+
+    @IBAction func exitToPrevious(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+
     static func instantiate(from storyBoard: UIStoryboard?) -> Self? {
         func helper<T>() -> T? {
             let id = String(describing: T.self)
