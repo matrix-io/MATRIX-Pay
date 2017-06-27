@@ -2,11 +2,10 @@
 const fs = require('fs');
 const io = require('socket.io')();
 const fr =  require('./lib/faceRecog.js');
-//const db = require('./lib/dataStoreManager.js');
 const visaPay = require('./lib/visa_pay.js');
 
 
-console.log(fr);
+//console.log(fr);
 //console.log(db);
 //////////////////////////
 /// User Data Storage
@@ -60,7 +59,6 @@ io.on('connection', function(client) {
         console.log(data);
         userDatabase[current_email] = data;
         saveData();
-        console.log(readData());
         user_info = data;
     
     });
@@ -69,7 +67,7 @@ io.on('connection', function(client) {
     client.on('PaymentRequest',function(price, security){
         price = price / 100;
         console.log('security: ' + security);
-        
+
         //check if user face validates result : bool(true = pass) (false = fail)
         fr.recognize(current_email, (result) =>{
             if(result){
@@ -83,11 +81,10 @@ io.on('connection', function(client) {
                     'cardExpirationYear': user_info.ccexpyear
                 }
             });
-
             visaPay.approveSale(testBody, function(data){
-                console.log(data);
-            }); 
+                console.log('<<<<<data>>>>> ' + data);
                 client.emit('PaymentResult', true)
+            }); 
             }
             else {
                 client.emit('PaymentResult', false)
@@ -97,7 +94,7 @@ io.on('connection', function(client) {
     });
 });
 matrix.on('reset', function(){
-    fr.reset('hi');
+    fr.reset('matrix');
 });
 matrix.on('listtags', function(){
     fr.listTags();
