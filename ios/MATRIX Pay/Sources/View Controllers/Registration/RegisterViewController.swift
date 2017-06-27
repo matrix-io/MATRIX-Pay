@@ -33,4 +33,8 @@ class RegisterViewController: UIViewController {
         colorView.startAnimation()
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
 }

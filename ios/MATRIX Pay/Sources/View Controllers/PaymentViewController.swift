@@ -106,4 +106,8 @@ class PaymentViewController: UIViewController {
         shouldContinue = true
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
 }

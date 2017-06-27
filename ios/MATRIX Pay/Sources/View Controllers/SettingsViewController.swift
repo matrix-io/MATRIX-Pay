@@ -59,4 +59,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         return true
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
 }
