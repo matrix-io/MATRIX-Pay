@@ -214,7 +214,7 @@
 				TargetAttributes = {
 					524695491EEC3C3E00A88D16 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = D97BP28TP2;
+						DevelopmentTeam = 72TH32JQ4L;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -420,7 +420,7 @@
 			baseConfigurationReference = 85CEC271FD5795BA0A9477F8 /* Pods-MATRIX Pay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = D97BP28TP2;
+				DEVELOPMENT_TEAM = 72TH32JQ4L;
 				INFOPLIST_FILE = "$(SRCROOT)/MATRIX Pay/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "one.matrix.MATRIX-Pay";
@@ -434,7 +434,7 @@
 			baseConfigurationReference = FD78A8477970C7698E023681 /* Pods-MATRIX Pay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = D97BP28TP2;
+				DEVELOPMENT_TEAM = 72TH32JQ4L;
 				INFOPLIST_FILE = "$(SRCROOT)/MATRIX Pay/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "one.matrix.MATRIX-Pay";
