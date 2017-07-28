@@ -18,9 +18,13 @@ func price(from field: UITextField) -> UInt? {
     return UInt(value * 100)
 }
 
-class PaymentViewController: UIViewController {
+class PaymentViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
-    @IBOutlet weak var priceField: UITextField!
+    @IBOutlet weak var dropDown: UIPickerView!
+    @IBOutlet weak var textbox: UITextField!
+    
+    
+    //@IBOutlet weak var priceField: UITextField!
 
     @IBOutlet weak var securityField: UITextField!
 
@@ -28,34 +32,62 @@ class PaymentViewController: UIViewController {
 
     private var shouldContinue = true
 
-    var price: Int? {
-        guard let text = priceField.text, let value = Double(text) else {
-            return nil
-        }
-        return Int(value * 100)
+//    var price: Int? {
+//        guard let text = priceField.text, let value = Double(text) else {
+//            return nil
+//        }
+//        return Int(value * 100)
+//    }
+    
+    var products = ["Lays", "Tostitos", "Queso", "Coke", "Sprite", "Water", "Vodka", "Tequila", "White Wine", "Red Wine", "Beer", "Chicken Tacos", "Pork Tacos", "Veggie Burrito", "Quesadilla"]
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
-
-    @IBAction func performPayment() {
-        guard shouldContinue, let price = self.price, let sec = securityField.text.flatMap({ Int($0) }) else {
-            return
-        }
-        guard (socket.engine?.connected ?? false) else {
-            let alert = UIAlertController(title: "Connection Error",
-                                          message: "Not connected to MATRIX. Cannnot perform purchase.",
-                                          preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-            return
-        }
-
-        shouldContinue = false
-
-        socket.emit(requestFor: .payment, price, sec)
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        var countrows : Int = products.count
+        return countrows
     }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let titleRow = products[row]
+        return titleRow
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.textbox.text = self.products[row]
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.dropDown.isHidden = false
+    }
+    
+
+//    @IBAction func performPayment() {
+//        guard shouldContinue, let price = self.price, let sec = securityField.text.flatMap({ Int($0) }) else {
+//            return
+//        }
+//        guard (socket.engine?.connected ?? false) else {
+//            let alert = UIAlertController(title: "Connection Error",
+//                                          message: "Not connected to MATRIX. Cannnot perform purchase.",
+//                                          preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//            self.present(alert, animated: true, completion: nil)
+//            return
+//        }
+//
+//        shouldContinue = false
+//
+//        socket.emit(requestFor: .payment, price, sec)
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        dropDown.delegate = self
+        dropDown.dataSource = self
+        
         colorView.startPoint = .bottomLeft
         colorView.endPoint = .topRight
 

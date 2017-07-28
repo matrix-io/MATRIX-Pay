@@ -1,6 +1,11 @@
-use_frameworks!
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
 
 target 'MATRIX Pay' do
+  
+  use_frameworks!
+
     pod 'Socket.IO-Client-Swift', '~> 10.0.0'
     pod 'Pastel', '~> 0.2.2'
+
 end

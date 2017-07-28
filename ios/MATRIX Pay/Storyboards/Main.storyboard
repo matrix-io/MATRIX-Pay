@@ -52,7 +52,7 @@
                                             <constraint firstAttribute="height" constant="50" id="HIY-Oa-iGe"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Make Payment">
+                                        <state key="normal" title="Make Purchase">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -296,12 +296,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2AT-0Q-1j2">
                                 <rect key="frame" x="37" y="50" width="300" height="467"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v1G-Ay-cPS">
-                                        <rect key="frame" x="30" y="148.5" width="240" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNh-ck-z37">
                                         <rect key="frame" x="10" y="0.0" width="134" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -311,9 +305,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZ8-Jf-KkJ">
-                                        <rect key="frame" x="80" y="238.5" width="140" height="36"/>
+                                        <rect key="frame" x="80" y="332" width="140" height="36"/>
                                         <color key="backgroundColor" red="0.39990800619125366" green="0.7405734658241272" blue="0.99842864274978638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="731-7R-D7l"/>
                                             <constraint firstAttribute="width" constant="140" id="niD-L8-yXL"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -335,8 +330,17 @@
                                             <action selector="performPayment" destination="Pc7-vk-VZU" eventType="touchUpInside" id="sAd-Y3-FCa"/>
                                         </connections>
                                     </button>
+                                    <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jO0-j6-gKN">
+                                        <rect key="frame" x="-37" y="119" width="375" height="137"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Pc7-vk-VZU" id="Kr3-eO-MJo"/>
+                                        </connections>
+                                    </pickerView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Security Code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DL1-5t-thZ">
-                                        <rect key="frame" x="70.5" y="188.5" width="160" height="30"/>
+                                        <rect key="frame" x="0.0" y="282" width="300" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="ABk-mi-qAe"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -344,13 +348,16 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="v1G-Ay-cPS" firstAttribute="centerY" secondItem="2AT-0Q-1j2" secondAttribute="centerY" constant="-70" id="Gzw-sI-7Sx"/>
+                                    <constraint firstItem="DL1-5t-thZ" firstAttribute="top" secondItem="jO0-j6-gKN" secondAttribute="bottom" constant="26" id="1OB-Tu-5ZU"/>
+                                    <constraint firstAttribute="bottom" secondItem="DL1-5t-thZ" secondAttribute="bottom" constant="155" id="E5b-tH-iWX"/>
                                     <constraint firstItem="hNh-ck-z37" firstAttribute="top" secondItem="2AT-0Q-1j2" secondAttribute="top" id="OOm-xg-nw0"/>
                                     <constraint firstItem="eZ8-Jf-KkJ" firstAttribute="centerX" secondItem="2AT-0Q-1j2" secondAttribute="centerX" id="Q48-Ic-Wuv"/>
+                                    <constraint firstItem="jO0-j6-gKN" firstAttribute="width" secondItem="2AT-0Q-1j2" secondAttribute="width" id="RgR-wI-eeA"/>
+                                    <constraint firstItem="DL1-5t-thZ" firstAttribute="centerX" secondItem="jO0-j6-gKN" secondAttribute="centerX" id="StS-e5-KmL"/>
                                     <constraint firstItem="eZ8-Jf-KkJ" firstAttribute="top" secondItem="DL1-5t-thZ" secondAttribute="bottom" constant="20" id="T5Z-hN-mXF"/>
-                                    <constraint firstItem="v1G-Ay-cPS" firstAttribute="centerX" secondItem="2AT-0Q-1j2" secondAttribute="centerX" id="Xy2-7s-I1J"/>
-                                    <constraint firstItem="DL1-5t-thZ" firstAttribute="top" secondItem="v1G-Ay-cPS" secondAttribute="bottom" constant="10" id="fJV-NZ-Ya1"/>
-                                    <constraint firstItem="v1G-Ay-cPS" firstAttribute="width" secondItem="2AT-0Q-1j2" secondAttribute="width" multiplier="0.8" id="gtf-Jn-4dL"/>
+                                    <constraint firstItem="DL1-5t-thZ" firstAttribute="width" secondItem="2AT-0Q-1j2" secondAttribute="width" id="bOR-K7-nX9"/>
+                                    <constraint firstItem="eZ8-Jf-KkJ" firstAttribute="centerX" secondItem="2AT-0Q-1j2" secondAttribute="centerX" id="fC6-2Y-fy5"/>
+                                    <constraint firstItem="jO0-j6-gKN" firstAttribute="centerY" secondItem="2AT-0Q-1j2" secondAttribute="centerY" id="p1L-WU-9t5"/>
                                     <constraint firstItem="hNh-ck-z37" firstAttribute="leading" secondItem="2AT-0Q-1j2" secondAttribute="leading" constant="10" id="u86-1E-kgc"/>
                                     <constraint firstItem="DL1-5t-thZ" firstAttribute="centerX" secondItem="2AT-0Q-1j2" secondAttribute="centerX" id="xPR-UW-ppr"/>
                                 </constraints>
@@ -373,24 +380,40 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Product for Purchase" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b0k-91-gcf">
+                                <rect key="frame" x="37" y="124" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="b0k-91-gcf" secondAttribute="height" multiplier="10:1" id="Gfb-bY-vk3"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Pc7-vk-VZU" id="tTH-hu-1AO"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.21651980379999999" green="0.62442047499999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="2AT-0Q-1j2" firstAttribute="height" secondItem="kuM-xI-lBw" secondAttribute="height" multiplier="0.7" id="1af-y8-gPd"/>
                             <constraint firstItem="2AT-0Q-1j2" firstAttribute="centerX" secondItem="kuM-xI-lBw" secondAttribute="centerX" id="3vz-KF-ddM"/>
+                            <constraint firstItem="b0k-91-gcf" firstAttribute="centerX" secondItem="kuM-xI-lBw" secondAttribute="centerX" id="K87-Tk-u13"/>
                             <constraint firstItem="2AT-0Q-1j2" firstAttribute="centerY" secondItem="kuM-xI-lBw" secondAttribute="centerY" constant="-50" id="Qzf-lb-UpE"/>
+                            <constraint firstItem="b0k-91-gcf" firstAttribute="width" secondItem="kuM-xI-lBw" secondAttribute="width" constant="-75" id="gxc-zz-erT"/>
                             <constraint firstItem="2AT-0Q-1j2" firstAttribute="width" secondItem="kuM-xI-lBw" secondAttribute="width" multiplier="0.8" id="i2Q-BI-zeK"/>
+                            <constraint firstItem="b0k-91-gcf" firstAttribute="top" secondItem="JQD-he-bW8" secondAttribute="bottom" constant="104" id="w1s-iu-cHT"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="colorView" destination="kuM-xI-lBw" id="EhM-O4-i52"/>
-                        <outlet property="priceField" destination="v1G-Ay-cPS" id="qEh-VN-hyL"/>
+                        <outlet property="dropDown" destination="jO0-j6-gKN" id="XBr-i5-lDM"/>
                         <outlet property="securityField" destination="DL1-5t-thZ" id="wLt-0n-FYb"/>
+                        <outlet property="textbox" destination="b0k-91-gcf" id="GEj-EF-49Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nCJ-FS-PMI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1622" y="139"/>
+            <point key="canvasLocation" x="1621.5999999999999" y="138.98050974512745"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cht-o5-hHh">

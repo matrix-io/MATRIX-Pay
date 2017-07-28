@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		08408C90E6D79EAE5A1E022C /* Pods_MATRIX_Pay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A7E32952290D5AF058E157 /* Pods_MATRIX_Pay.framework */; };
 		524337DF1EED48B3005D83F9 /* ClientOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524337DE1EED48B3005D83F9 /* ClientOperation.swift */; };
 		524337E41EED5503005D83F9 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524337E11EED5503005D83F9 /* EmailViewController.swift */; };
 		524337E51EED5503005D83F9 /* PayInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524337E21EED5503005D83F9 /* PayInfoViewController.swift */; };
@@ -22,9 +21,12 @@
 		52EBF5B51EEC92CC00134579 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBF5AF1EEC92CB00134579 /* PaymentViewController.swift */; };
 		52EBF5B71EEC92CC00134579 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBF5B11EEC92CB00134579 /* StartViewController.swift */; };
 		52EBF5B91EEC982600134579 /* UIColor+MP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBF5B81EEC982600134579 /* UIColor+MP.swift */; };
+		BE6BB150584CA5D9F3706FC2 /* Pods_MATRIX_Pay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 153D6FD44C45C5F3C5240248 /* Pods_MATRIX_Pay.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03D30C4826786798E836396F /* Pods-MATRIX Pay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MATRIX Pay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MATRIX Pay/Pods-MATRIX Pay.debug.xcconfig"; sourceTree = "<group>"; };
+		153D6FD44C45C5F3C5240248 /* Pods_MATRIX_Pay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MATRIX_Pay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		524337DE1EED48B3005D83F9 /* ClientOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientOperation.swift; sourceTree = "<group>"; };
 		524337E11EED5503005D83F9 /* EmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		524337E21EED5503005D83F9 /* PayInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayInfoViewController.swift; sourceTree = "<group>"; };
@@ -41,9 +43,7 @@
 		52EBF5AF1EEC92CB00134579 /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		52EBF5B11EEC92CB00134579 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		52EBF5B81EEC982600134579 /* UIColor+MP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+MP.swift"; sourceTree = "<group>"; };
-		62A7E32952290D5AF058E157 /* Pods_MATRIX_Pay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MATRIX_Pay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		85CEC271FD5795BA0A9477F8 /* Pods-MATRIX Pay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MATRIX Pay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MATRIX Pay/Pods-MATRIX Pay.debug.xcconfig"; sourceTree = "<group>"; };
-		FD78A8477970C7698E023681 /* Pods-MATRIX Pay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MATRIX Pay.release.xcconfig"; path = "Pods/Target Support Files/Pods-MATRIX Pay/Pods-MATRIX Pay.release.xcconfig"; sourceTree = "<group>"; };
+		B127CAD578EF479E593284A3 /* Pods-MATRIX Pay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MATRIX Pay.release.xcconfig"; path = "Pods/Target Support Files/Pods-MATRIX Pay/Pods-MATRIX Pay.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,19 +51,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08408C90E6D79EAE5A1E022C /* Pods_MATRIX_Pay.framework in Frameworks */,
+				BE6BB150584CA5D9F3706FC2 /* Pods_MATRIX_Pay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4A78089A90B698014F6568B5 /* Frameworks */ = {
+		0585B7F1A330DA77D73FB296 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				62A7E32952290D5AF058E157 /* Pods_MATRIX_Pay.framework */,
+				03D30C4826786798E836396F /* Pods-MATRIX Pay.debug.xcconfig */,
+				B127CAD578EF479E593284A3 /* Pods-MATRIX Pay.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		524337E01EED5503005D83F9 /* Registration */ = {
@@ -81,8 +82,8 @@
 			children = (
 				5246954C1EEC3C3E00A88D16 /* MATRIX Pay */,
 				5246954B1EEC3C3E00A88D16 /* Products */,
-				7FAF00DFBAC7DC6B378D8644 /* Pods */,
-				4A78089A90B698014F6568B5 /* Frameworks */,
+				0585B7F1A330DA77D73FB296 /* Pods */,
+				DD52EC3371E017EC32BEFC13 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -170,13 +171,12 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		7FAF00DFBAC7DC6B378D8644 /* Pods */ = {
+		DD52EC3371E017EC32BEFC13 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				85CEC271FD5795BA0A9477F8 /* Pods-MATRIX Pay.debug.xcconfig */,
-				FD78A8477970C7698E023681 /* Pods-MATRIX Pay.release.xcconfig */,
+				153D6FD44C45C5F3C5240248 /* Pods_MATRIX_Pay.framework */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,7 +417,7 @@
 		};
 		5246955D1EEC3C3E00A88D16 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 85CEC271FD5795BA0A9477F8 /* Pods-MATRIX Pay.debug.xcconfig */;
+			baseConfigurationReference = 03D30C4826786798E836396F /* Pods-MATRIX Pay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = D97BP28TP2;
@@ -431,7 +431,7 @@
 		};
 		5246955E1EEC3C3E00A88D16 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD78A8477970C7698E023681 /* Pods-MATRIX Pay.release.xcconfig */;
+			baseConfigurationReference = B127CAD578EF479E593284A3 /* Pods-MATRIX Pay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = D97BP28TP2;
