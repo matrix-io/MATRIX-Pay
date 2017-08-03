@@ -11,14 +11,9 @@ import SocketIO
 import Dispatch
 import Pastel
 
-func price(from field: UITextField) -> UInt? {
-    guard let text = field.text, let value = Double(text) else {
-        return nil
-    }
-    return UInt(value * 100)
-}
+class PaymentViewController: UIViewController, ItemTableViewControllerDelegate {
 
-class PaymentViewController: UIViewController {
+    @IBOutlet var itemTableVC: ItemTableViewController!
 
     @IBOutlet weak var priceField: UITextField!
 
@@ -26,17 +21,12 @@ class PaymentViewController: UIViewController {
 
     @IBOutlet var colorView: PastelView!
 
+    private var price: NSDecimalNumber = 0
+
     private var shouldContinue = true
 
-    var price: Int? {
-        guard let text = priceField.text, let value = Double(text) else {
-            return nil
-        }
-        return Int(value * 100)
-    }
-
     @IBAction func performPayment() {
-        guard shouldContinue, let price = self.price, let sec = securityField.text.flatMap({ Int($0) }) else {
+        guard shouldContinue, let sec = securityField.text.flatMap({ Int($0) }) else {
             return
         }
         guard (socket.engine?.connected ?? false) else {
@@ -50,11 +40,14 @@ class PaymentViewController: UIViewController {
 
         shouldContinue = false
 
+        let price = self.price.multiplying(by: .hundred).intValue
         socket.emit(requestFor: .payment, price, sec)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        itemTableVC.delegate = self
+        priceField.text = price.currencyString
 
         colorView.startPoint = .bottomLeft
         colorView.endPoint = .topRight
@@ -104,6 +97,12 @@ class PaymentViewController: UIViewController {
         super.viewWillDisappear(animated)
         socket.off(resultOf: .payment)
         shouldContinue = true
+    }
+
+    func itemTableUpdatedPrice(with difference: NSDecimalNumber) {
+        price = price.adding(difference)
+        priceField.text = price.currencyString
+        print(price)
     }
 
 }

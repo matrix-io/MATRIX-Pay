@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		08408C90E6D79EAE5A1E022C /* Pods_MATRIX_Pay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A7E32952290D5AF058E157 /* Pods_MATRIX_Pay.framework */; };
+		520B518D1F336B1E0071E258 /* ItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B518C1F336B1E0071E258 /* ItemTableViewController.swift */; };
+		520B518F1F338A810071E258 /* NSNumber+MP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B518E1F338A810071E258 /* NSNumber+MP.swift */; };
 		524337DF1EED48B3005D83F9 /* ClientOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524337DE1EED48B3005D83F9 /* ClientOperation.swift */; };
 		524337E41EED5503005D83F9 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524337E11EED5503005D83F9 /* EmailViewController.swift */; };
 		524337E51EED5503005D83F9 /* PayInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524337E21EED5503005D83F9 /* PayInfoViewController.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		520B518C1F336B1E0071E258 /* ItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewController.swift; sourceTree = "<group>"; };
+		520B518E1F338A810071E258 /* NSNumber+MP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNumber+MP.swift"; sourceTree = "<group>"; };
 		524337DE1EED48B3005D83F9 /* ClientOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientOperation.swift; sourceTree = "<group>"; };
 		524337E11EED5503005D83F9 /* EmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		524337E21EED5503005D83F9 /* PayInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayInfoViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 				52EBF5AC1EEC92CB00134579 /* CALayer+MP.swift */,
 				52EBF5AD1EEC92CB00134579 /* UIViewController+MP.swift */,
 				52EBF5B81EEC982600134579 /* UIColor+MP.swift */,
+				520B518E1F338A810071E258 /* NSNumber+MP.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 				52EBF5B11EEC92CB00134579 /* StartViewController.swift */,
 				528EC3381EF993C70098AEED /* SettingsViewController.swift */,
 				52EBF5AF1EEC92CB00134579 /* PaymentViewController.swift */,
+				520B518C1F336B1E0071E258 /* ItemTableViewController.swift */,
 				524337E01EED5503005D83F9 /* Registration */,
 			);
 			path = "View Controllers";
@@ -312,7 +318,9 @@
 				52EBF5B51EEC92CC00134579 /* PaymentViewController.swift in Sources */,
 				52EBF5B71EEC92CC00134579 /* StartViewController.swift in Sources */,
 				524337E41EED5503005D83F9 /* EmailViewController.swift in Sources */,
+				520B518F1F338A810071E258 /* NSNumber+MP.swift in Sources */,
 				524337E61EED5503005D83F9 /* RegisterViewController.swift in Sources */,
+				520B518D1F336B1E0071E258 /* ItemTableViewController.swift in Sources */,
 				524337E51EED5503005D83F9 /* PayInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
