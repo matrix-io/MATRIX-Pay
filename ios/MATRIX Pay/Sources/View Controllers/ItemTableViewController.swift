@@ -10,30 +10,38 @@ import UIKit
 
 private typealias Item = (name: String, price: NSDecimalNumber)
 
-private let items: [Item] = [
-    ("Lays",            05.98),
-    ("Tostitos",        02.98),
-    ("Queso",           01.49),
-    ("Coke",            01.49),
-    ("Sprite",          01.49),
-    ("Water",           00.99),
-    ("Vodka",           13.99),
-    ("Tequila",         19.99),
-    ("White Wine",      39.99),
-    ("Red Wine",        39.99),
-    ("Beer",            07.99),
-    ("Chicken Tacos",   08.99),
-    ("Pork Tacos",      07.29),
-    ("Veggie Burrito",  06.50),
-    ("Quesadilla",      04.99),
+private let items: [(title: String, values: [Item])] = [
+    ("Foods", [
+        ("Chicken Tacos",   08.99),
+        ("Pork Tacos",      07.29),
+        ("Veggie Burrito",  06.50),
+        ("Quesadilla",      04.99),
+    ]),
+    ("Snacks", [
+        ("Lays",            05.98),
+        ("Tostitos",        02.98),
+        ("Queso",           01.49),
+    ]),
+    ("Drinks", [
+        ("Coke",            01.49),
+        ("Sprite",          01.49),
+        ("Water",           00.99),
+    ]),
+    ("Alcohol", [
+        ("Vodka",           13.99),
+        ("Tequila",         19.99),
+        ("White Wine",      39.99),
+        ("Red Wine",        39.99),
+        ("Beer",            07.99),
+    ])
 ]
 
 private func item(at path: IndexPath) -> Item? {
     var iter = path.makeIterator()
-    guard iter.next() == 0, let idx = iter.next() else {
+    guard let i = iter.next(), let j = iter.next() else {
         return nil
     }
-    return items[idx]
+    return items[i].values[j]
 }
 
 protocol ItemTableViewControllerDelegate: class {
@@ -49,11 +57,15 @@ class ItemTableViewController: UITableViewController {
     weak var delegate: ItemTableViewControllerDelegate?
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return items.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return items[section].values.count
+    }
+
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return items[section].title
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
