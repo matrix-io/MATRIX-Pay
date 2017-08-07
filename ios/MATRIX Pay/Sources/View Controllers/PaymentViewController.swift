@@ -11,7 +11,7 @@ import SocketIO
 import Dispatch
 import Pastel
 
-class PaymentViewController: UIViewController, ItemTableViewControllerDelegate {
+class PaymentViewController: UIViewController, ItemTableViewControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet var itemTableVC: ItemTableViewController!
 
@@ -45,6 +45,8 @@ class PaymentViewController: UIViewController, ItemTableViewControllerDelegate {
     }
 
     override func viewDidLoad() {
+        securityField.delegate = self
+
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
 
@@ -105,6 +107,11 @@ class PaymentViewController: UIViewController, ItemTableViewControllerDelegate {
         price = price.adding(difference)
         priceField.text = price.currencyString
         print(price)
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return false
     }
 
 }
