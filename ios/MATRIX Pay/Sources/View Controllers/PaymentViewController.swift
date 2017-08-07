@@ -46,6 +46,8 @@ class PaymentViewController: UIViewController, ItemTableViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
+
         itemTableVC.delegate = self
         priceField.text = price.currencyString
 
