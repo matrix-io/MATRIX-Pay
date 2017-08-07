@@ -76,10 +76,6 @@ class ItemTableViewController: UITableViewController {
             cost.text = price.currencyString
         }
 
-        let selectedBackgroundView = UIView()
-        selectedBackgroundView.backgroundColor = UIColor(r: 102, g: 189, b: 255)
-        cell.selectedBackgroundView = selectedBackgroundView
-
         return cell
     }
 
@@ -92,24 +88,14 @@ class ItemTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        setCellTextColor(at: indexPath, to: .white)
         if let (_, price) = item(at: indexPath) {
             delegate?.itemTableUpdatedPrice(with: price)
         }
     }
 
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        setCellTextColor(at: indexPath, to: .black)
         if let (_, price) = item(at: indexPath) {
             delegate?.itemTableUpdatedPrice(with: price.multiplying(by: -1))
-        }
-    }
-
-    func setCellTextColor(at indexPath: IndexPath, to color: UIColor) {
-        if let cell = tableView.cellForRow(at: indexPath) {
-            for case let label? in [cell.textLabel, cell.detailTextLabel] {
-                label.textColor = color
-            }
         }
     }
 
