@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		08408C90E6D79EAE5A1E022C /* Pods_MATRIX_Pay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A7E32952290D5AF058E157 /* Pods_MATRIX_Pay.framework */; };
+		520B518D1F336B1E0071E258 /* ItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B518C1F336B1E0071E258 /* ItemTableViewController.swift */; };
+		520B518F1F338A810071E258 /* NSNumber+MP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B518E1F338A810071E258 /* NSNumber+MP.swift */; };
 		524337DF1EED48B3005D83F9 /* ClientOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524337DE1EED48B3005D83F9 /* ClientOperation.swift */; };
 		524337E41EED5503005D83F9 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524337E11EED5503005D83F9 /* EmailViewController.swift */; };
 		524337E51EED5503005D83F9 /* PayInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524337E21EED5503005D83F9 /* PayInfoViewController.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		520B518C1F336B1E0071E258 /* ItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewController.swift; sourceTree = "<group>"; };
+		520B518E1F338A810071E258 /* NSNumber+MP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNumber+MP.swift"; sourceTree = "<group>"; };
 		524337DE1EED48B3005D83F9 /* ClientOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientOperation.swift; sourceTree = "<group>"; };
 		524337E11EED5503005D83F9 /* EmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		524337E21EED5503005D83F9 /* PayInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayInfoViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 				52EBF5AC1EEC92CB00134579 /* CALayer+MP.swift */,
 				52EBF5AD1EEC92CB00134579 /* UIViewController+MP.swift */,
 				52EBF5B81EEC982600134579 /* UIColor+MP.swift */,
+				520B518E1F338A810071E258 /* NSNumber+MP.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 				52EBF5B11EEC92CB00134579 /* StartViewController.swift */,
 				528EC3381EF993C70098AEED /* SettingsViewController.swift */,
 				52EBF5AF1EEC92CB00134579 /* PaymentViewController.swift */,
+				520B518C1F336B1E0071E258 /* ItemTableViewController.swift */,
 				524337E01EED5503005D83F9 /* Registration */,
 			);
 			path = "View Controllers";
@@ -214,7 +220,7 @@
 				TargetAttributes = {
 					524695491EEC3C3E00A88D16 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = D97BP28TP2;
+						DevelopmentTeam = 72TH32JQ4L;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -272,13 +278,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MATRIX Pay-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FA31D843A9850DF857B6D252 /* [CP] Embed Pods Frameworks */ = {
@@ -287,9 +296,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MATRIX Pay/Pods-MATRIX Pay-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Pastel/Pastel.framework",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pastel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -312,7 +326,9 @@
 				52EBF5B51EEC92CC00134579 /* PaymentViewController.swift in Sources */,
 				52EBF5B71EEC92CC00134579 /* StartViewController.swift in Sources */,
 				524337E41EED5503005D83F9 /* EmailViewController.swift in Sources */,
+				520B518F1F338A810071E258 /* NSNumber+MP.swift in Sources */,
 				524337E61EED5503005D83F9 /* RegisterViewController.swift in Sources */,
+				520B518D1F336B1E0071E258 /* ItemTableViewController.swift in Sources */,
 				524337E51EED5503005D83F9 /* PayInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,7 +436,7 @@
 			baseConfigurationReference = 85CEC271FD5795BA0A9477F8 /* Pods-MATRIX Pay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = D97BP28TP2;
+				DEVELOPMENT_TEAM = 72TH32JQ4L;
 				INFOPLIST_FILE = "$(SRCROOT)/MATRIX Pay/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "one.matrix.MATRIX-Pay";
@@ -434,7 +450,7 @@
 			baseConfigurationReference = FD78A8477970C7698E023681 /* Pods-MATRIX Pay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = D97BP28TP2;
+				DEVELOPMENT_TEAM = 72TH32JQ4L;
 				INFOPLIST_FILE = "$(SRCROOT)/MATRIX Pay/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "one.matrix.MATRIX-Pay";

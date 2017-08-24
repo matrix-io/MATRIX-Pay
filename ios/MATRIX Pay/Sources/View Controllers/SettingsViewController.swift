@@ -28,6 +28,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
         shouldPopOnDisconnect = false
 
         if let url = addressFromDefaults() {
