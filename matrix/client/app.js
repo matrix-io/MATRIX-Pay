@@ -2,7 +2,7 @@
 const fs = require('fs');
 const io = require('socket.io')();
 const fr =  require('./lib/faceRecog.js');
-//const db = require('./lib/dataStoreManager.js');
+const common = require('./lib/recognition_common.js')
 const visaPay = require('./lib/visa_pay.js');
 
 
@@ -71,7 +71,7 @@ io.on('connection', function(client) {
         console.log('security: ' + security);
         
         //check if user face validates result : bool(true = pass) (false = fail)
-        fr.recognize(current_email, (result) =>{
+        /*fr.recognize(current_email, (result) =>{
             if(result){
             //request body
             var testBody = JSON.stringify({
@@ -83,6 +83,7 @@ io.on('connection', function(client) {
                     'cardExpirationYear': user_info.ccexpyear
                 }
             });
+            
 
             visaPay.approveSale(testBody, function(data){
                 console.log(data);
@@ -93,7 +94,14 @@ io.on('connection', function(client) {
                 client.emit('PaymentResult', false)
             }    
         });
-        
+        */
+        common.getDescriptors(eye, 7 /* How Many*/, true /* Verbose */,
+            (e, descriptors) => {
+            if (e) {
+              console.log(e);
+              process.exit(1);
+            }
+        });
     });
 });
 matrix.on('reset', function(){
