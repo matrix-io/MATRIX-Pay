@@ -2,7 +2,6 @@
 const fs = require('fs');
 const io = require('socket.io')();
 const fr =  require('./lib/faceRecog.js');
-const common = require('./lib/recognition_common.js')
 const visaPay = require('./lib/visa_pay.js');
 
 
@@ -44,25 +43,11 @@ io.on('connection', function(client) {
     //obtain credit card info
     var user_info = {};
     client.on('UserInfo',function(data){
-    	/* 	
-    	data
-    		{
-				security : number
-				ccnum : string
-				cccvc : number
-				ccexpmon : number
-				ccexpyear : number
-				ccname : string		
-    		}
-    		+
-    		userEmail
-    	*/
         console.log(data);
         userDatabase[current_email] = data;
         saveData();
         console.log(readData());
         user_info = data;
-    
     });
 
     //attempt to make a transaction
@@ -71,41 +56,33 @@ io.on('connection', function(client) {
         console.log('security: ' + security);
         
         //check if user face validates result : bool(true = pass) (false = fail)
-        /*fr.recognize(current_email, (result) =>{
+        fr.recognize(current_email, (result) =>{
             if(result){
             //request body
-            var testBody = JSON.stringify({
-                'amount': price.toString(),
-                'currency': 'USD',
-                'payment': {
-                    'cardNumber': user_info.ccnum,
-                    'cardExpirationMonth': user_info.ccexpmon,
-                    'cardExpirationYear': user_info.ccexpyear
-                }
-            });
-            
-
-            visaPay.approveSale(testBody, function(data){
-                console.log(data);
-            }); 
+                var testBody = JSON.stringify({
+                    'amount': price.toString(),
+                    'currency': 'USD',
+                    'payment': {
+                        'cardNumber': user_info.ccnum,
+                        'cardExpirationMonth': user_info.ccexpmon,
+                        'cardExpirationYear': user_info.ccexpyear
+                    }
+                });
                 client.emit('PaymentResult', true)
+                visaPay.approveSale(testBody, function(data){
+                    console.log(data);
+                }); 
             }
             else {
                 client.emit('PaymentResult', false)
             }    
         });
-        */
-        common.getDescriptors(eye, 7 /* How Many*/, true /* Verbose */,
-            (e, descriptors) => {
-            if (e) {
-              console.log(e);
-              process.exit(1);
-            }
-        });
+        
+       
     });
 });
 matrix.on('reset', function(){
-    fr.reset('hi');
+    fr.reset('matrix');
 });
 matrix.on('listtags', function(){
     fr.listTags();
