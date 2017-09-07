@@ -13,15 +13,28 @@ console.log(fr);
 //create a writable json file
 
 function readData() {
+    console.log('reading data...');
     return JSON.parse(fs.readFileSync(__dirname+'/userDatabase.json', 'utf8'));//read json file    
+    
+}
+function readSecurity() {
+    console.log('reading sec...');
+    return JSON.parse(fs.readFileSync(__dirname+'/security.json', 'utf8'));//read json file    
+    
 }
 
 var userDatabase = readData();
 var current_email = '';
+var userSecurity = readSecurity();
 
 //save changes made to database
 function saveData(){
+    console.log('saving data...');
     fs.writeFileSync(__dirname+'/userDatabase.json',JSON.stringify(userDatabase,null,2) ,'utf8');
+}
+function saveSecurity(){
+    console.log('saving sec...');
+    fs.writeFileSync(__dirname+'/security.json',JSON.stringify(userSecurity,null,2) ,'utf8');
 }
 
 //////////////////////////
@@ -29,7 +42,10 @@ function saveData(){
 //////////////////////////
 //on connection
 io.on('connection', function(client) {
+
     console.log('user connected');
+    console.log(readData());
+    console.log(readSecurity());
     //obtain user email to begin database registration
     client.on('RegisterRequest', function(user_email){
 
@@ -42,45 +58,65 @@ io.on('connection', function(client) {
     });
     //obtain credit card info
     var user_info = {};
+    var user_sec = [];
+    user_sec.push(userSecurity);
     client.on('UserInfo',function(data){
-        console.log(data);
+        console.log("This is dataaaaaaa" + JSON.stringify(data));
         userDatabase[current_email] = data;
         saveData();
         console.log(readData());
+        userSecurity = data.security
+        saveSecurity();
+        console.log(readSecurity());
         user_info = data;
+        user_sec.push(userSecurity);
+        console.log(user_sec);
+        saveSecurity();
     });
 
     //attempt to make a transaction
     client.on('PaymentRequest',function(price, security){
         price = price / 100;
+        ////////////user_sec.push(userSecurity);
         console.log('security: ' + security);
-        
+        console.log(user_sec);
         //check if user face validates result : bool(true = pass) (false = fail)
-        fr.recognize(current_email, (result) =>{
-            if(result){
-            //request body
-                var testBody = JSON.stringify({
-                    'amount': price.toString(),
-                    'currency': 'USD',
-                    'payment': {
-                        'cardNumber': user_info.ccnum,
-                        'cardExpirationMonth': user_info.ccexpmon,
-                        'cardExpirationYear': user_info.ccexpyear
-                    }
-                });
-                client.emit('PaymentResult', true)
-                visaPay.approveSale(testBody, function(data){
-                    console.log(data);
-                }); 
-            }
-            else {
-                client.emit('PaymentResult', false)
-            }    
-        });
+        if(!user_sec.includes(security)){
+            client.emit('PaymentResult', false)
+            
+        }
+        else{
+            fr.recognize(current_email, (result) =>{
+                if(result){
+                    client.emit('PaymentResult', true)
+                    matrix.led('green').render();
         
+                    setTimeout(function() {
+                        matrix.led('black').render();
+                    }, 2000);
+                
+                }
+                else {
+                    client.emit('PaymentResult', false)
+                    matrix.led('red').render();
+                    
+                    setTimeout(function() {
+                        matrix.led('black').render();
+                    }, 2000);
+                }    
+            });
+        }  
        
     });
+    client.on('disconnect', function () {
+        readData();
+        readSecurity();
+        saveData();
+        saveSecurity();
+        console.log('user disconnected');
+    });
 });
+
 matrix.on('reset', function(){
     fr.reset('matrix');
 });

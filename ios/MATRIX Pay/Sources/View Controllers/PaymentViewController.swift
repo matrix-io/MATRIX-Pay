@@ -74,9 +74,9 @@ class PaymentViewController: UIViewController, ItemTableViewControllerDelegate, 
 
             if success {
                 let alert = UIAlertController(title: "Success!",
-                                              message: "Payment succeeded. Thank you for using MATRIX Pay. :)",
+                                              message: "Payment succeeded. Thank you for using MATRIX Pay.",
                                               preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Awesome", style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
                 self.present(alert, animated: true) { _ in
                     DispatchQueue.main.async { [weak self] in
                         self?.navigationController?.popToRootViewController(animated: true)
@@ -84,9 +84,9 @@ class PaymentViewController: UIViewController, ItemTableViewControllerDelegate, 
                 }
             } else {
                 let alert = UIAlertController(title: "Verification Error",
-                                              message: "Face is not recognized or security code is incorrect.",
+                                              message: "Security code is incorrect or face is not recognized.",
                                               preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
         }

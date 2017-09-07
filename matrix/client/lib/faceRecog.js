@@ -107,23 +107,10 @@ function recogFace(username_email, cb) {
         console.log('Min Distance Face', MinDistanceFace);
         if (MinDistanceFace.score < 0.85) {
             cb(true);
-            matrix.led('green').render();
-            //console.log('I know dis guy');
             matrix.service('recognition').stop();
-            
-            setTimeout(function() {
-                matrix.led('black').render();
-            }, 2000);
-            //successCount++;
         } else {
             cb(false);
-            matrix.led('red').render();
-            //console.log('I don know dis guy');
             matrix.service('recognition').stop();
-            
-            setTimeout(function() {
-                matrix.led('black').render();
-            }, 2000);
 
         }
 
