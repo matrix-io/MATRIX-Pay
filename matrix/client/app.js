@@ -119,6 +119,10 @@ io.on('connection', function(client) {
 
 matrix.on('reset', function(){
     fr.reset('matrix');
+    userDatabase = '';
+    saveData();
+    userSecurity = '';
+    saveSecurity();
 });
 matrix.on('listtags', function(){
     fr.listTags();
