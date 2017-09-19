@@ -105,7 +105,7 @@ function recogFace(username_email, cb) {
         MinDistanceFace = _.sortBy(MinDistanceFace, ['score'])[0];
         //console.log('<<<<<<<Matches>>>>>>>>>>>>>>>>>'+ JSON.stringify(data.matches));
         console.log('Min Distance Face', MinDistanceFace);
-        if (MinDistanceFace.score < 0.85) {
+        if (MinDistanceFace.score < 0.88) {
             cb(true);
             matrix.service('recognition').stop();
         } else {
