@@ -13,10 +13,11 @@ Imagine you are on a cruise hanging out by the pool and you want a drink. You wa
 1) Install the Matrix Pay app to your matrix by using the cli or dashboard `matrix install MatrixPay`
 2) Download the IOS app on your IOS device, compile it through Xcode (Not on the app store).
 3) Click the settings button at the bottom of the app to configure the ip address for it to connect to the Matrix Creator
-3) Once you have everything started, click the register button on your IOS device and it will start training your face. Hold the Matrix Creator about 3 feet in front of your while it is training. Once it turns green that means it trained your face.
-4) Input your info on the screen and make sure you rememeber your pin.
-5) When all your info is set you are ready to paay for things with your face!
-6) Click pay and you will see and pre set items list, click one or click multiple.
-7) input your pin and then click pay and the recognition service will start.
-8) Hold the Matrix Creator about 3 feet from your face.
-9) Green means success and red means it did not recognize you.
+    Example ip: `http://IP_ADDRESS:PORT#`
+4) Once you have everything started, click the register button on your IOS device and it will start training your face. Hold the Matrix Creator about 3 feet in front of your while it is training. Once it turns green that means it trained your face.
+5) Input your info on the screen and make sure you rememeber your pin.
+6) When all your info is set you are ready to paay for things with your face!
+7) Click pay and you will see and pre set items list, click one or click multiple.
+8) input your pin and then click pay and the recognition service will start.
+9) Hold the Matrix Creator about 3 feet from your face.
+10) Green means success and red means it did not recognize you.
