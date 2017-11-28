@@ -4,6 +4,7 @@ module.exports = {
 	trainFace: trainFace,
 	recognize: recogFace
 }
+//deletes the users profile
 function matrixReset(username_email) {
     matrix.service('recognition').untrain(username_email);
     matrix.led('red').render();
@@ -11,8 +12,7 @@ function matrixReset(username_email) {
         matrix.led('black').render();
     }, 1000);
 }
-////// LIST TAG FUNCTION //////
-// Unknown
+//lists the current profiles created
 function matrixListTags() {
     matrix.service('recognition').getTags().then(function(tags) {
         matrix.led('green').render();
@@ -97,7 +97,6 @@ function recogFace(username_email, cb) {
     }
     console.log(username_email);
     // starts recognition
-    //let successCount = 0; 
     matrix.service('recognition').start(''+username_email).then(function(data) {
         stopLights();
         console.log('RECOG>>>!', data);

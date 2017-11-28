@@ -11,16 +11,16 @@ console.log(fr);
 /// User Data Storage
 //////////////////////////
 //create a writable json file
-
+// reads and saves to json file
+var user_sec = [];
 function readData() {
     console.log('reading data...');
     return JSON.parse(fs.readFileSync(__dirname+'/userDatabase.json', 'utf8'));//read json file    
     
 }
 function readSecurity() {
-    console.log('reading sec...');
+    console.log('reading sec..');
     return JSON.parse(fs.readFileSync(__dirname+'/security.json', 'utf8'));//read json file    
-    
 }
 
 var userDatabase = readData();
@@ -34,7 +34,7 @@ function saveData(){
 }
 function saveSecurity(){
     console.log('saving sec...');
-    fs.writeFileSync(__dirname+'/security.json',JSON.stringify(userSecurity,null,2) ,'utf8');
+    fs.writeFileSync(__dirname+'/security.json',JSON.stringify(user_sec,null,2) ,'utf8');
 }
 
 //////////////////////////
@@ -58,8 +58,7 @@ io.on('connection', function(client) {
     });
     //obtain credit card info
     var user_info = {};
-    var user_sec = [];
-    user_sec.push(userSecurity);
+    //user_sec.push(userSecurity);
     client.on('UserInfo',function(data){
         console.log("This is dataaaaaaa" + JSON.stringify(data));
         userDatabase[current_email] = data;
@@ -77,7 +76,6 @@ io.on('connection', function(client) {
     //attempt to make a transaction
     client.on('PaymentRequest',function(price, security){
         price = price / 100;
-        ////////////user_sec.push(userSecurity);
         console.log('security: ' + security);
         console.log(user_sec);
         //check if user face validates result : bool(true = pass) (false = fail)
@@ -117,8 +115,22 @@ io.on('connection', function(client) {
     });
 });
 
-matrix.on('reset', function(){
-    fr.reset('matrix');
+matrix.on('client1', function(){
+    fr.reset('client1');
+    userDatabase = '';
+    saveData();
+    userSecurity = '';
+    saveSecurity();
+});
+matrix.on('client2', function(){
+    fr.reset('client2');
+    userDatabase = '';
+    saveData();
+    userSecurity = '';
+    saveSecurity();
+});
+matrix.on('client3', function(){
+    fr.reset('client3');
     userDatabase = '';
     saveData();
     userSecurity = '';
